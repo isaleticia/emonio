@@ -40,7 +40,7 @@ webpackEmptyAsyncContext.id = 150;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -80,12 +80,13 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/anjanadine/Emonio-App/src/pages/home/home.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n      List of available devices\n      </ion-title>\n      <ion-buttons end>\n      <button ion-button icon-end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content>\n  <ion-grid>\n  <ion-row style=\'background-color:#305680; color: white\'>\n    <ion-col>\n      <strong>Devices</strong>\n    </ion-col>\n    <ion-col>\n      <strong>RSSI</strong>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col> <button ion-item *ngFor="let device of devices">\n        {{ device.name || \'Unnamed\' }}\n        </button>\n    </ion-col>\n    <ion-col>\n      <button ion-item *ngFor="let device of devices">\n        <p>{{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>\n      </button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-buttons end>\n      <button ion-button (click)="scan()">\n        Refresh\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/anjanadine/Emonio-App/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/anjanadine/emonio/src/pages/home/home.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n      List of available devices\n      </ion-title>\n      <ion-buttons end>\n      <button ion-button icon-end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content>\n  <ion-grid>\n  <ion-row style=\'background-color:#305680; color: white\'>\n    <ion-col>\n      <strong>Devices</strong>\n    </ion-col>\n    <ion-col>\n      <strong>RSSI</strong>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col> <button ion-item *ngFor="let device of devices">\n        {{ device.name || \'Unnamed\' }}\n        </button>\n    </ion-col>\n    <ion-col>\n      <button ion-item *ngFor="let device of devices">\n        <p>{{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>\n      </button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-buttons end>\n      <button ion-button (click)="scan()">\n        Refresh\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -113,7 +114,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_ble__ = __webpack_require__(193);
@@ -174,7 +175,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(194);
@@ -203,7 +204,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/anjanadine/Emonio-App/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/anjanadine/Emonio-App/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/anjanadine/emonio/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
