@@ -52,6 +52,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+//import { NavController } from 'ionic-angular';
 
 
 var HomePage = /** @class */ (function () {
@@ -62,6 +63,10 @@ var HomePage = /** @class */ (function () {
         this.fail = function (error) { return alert(error); };
         bluetoothSerial.enable();
     }
+    HomePage.prototype.ionViewDidEnter = function () {
+        console.log('ionViewDidEnter');
+        this.startScanning();
+    };
     HomePage.prototype.startScanning = function () {
         var _this = this;
         this.pairedDevices = null;
