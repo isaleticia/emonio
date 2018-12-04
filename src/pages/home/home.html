@@ -1,32 +1,53 @@
-<ion-list padding>
+<ion-header> <br>
+<ion-navbar>
+  <ion-title>
+    List of available devices
+    </ion-title>
+    <ion-buttons end>
+    <button ion-button icon-end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+</ion-header>
 
- <ion-list-header>
-   Paired
- </ion-list-header>
- <ion-item *ngFor="let device of pairedDevices">
-   {{device.name}}
- </ion-item>
- 
- <ion-list-header>
-   Andere
- </ion-list-header>
- <ion-item *ngFor='let device of unpairedDevices'>
-   <span (click)="selectDevice(device.address)">
-     {{device.name}}
-   </span>
- </ion-item>
+<ion-content>
+<ion-grid>
+
+<ion-row style='background-color:#305680; color: white'>
+  <ion-col>
+    <strong>Devices</strong>
+  </ion-col>
+  <ion-col>
+    <strong>RSSI</strong>
+  </ion-col>
+</ion-row>
+
+<ion-row>
+<ion-col>
+  <button ion-item (click)="selectDevice(device.address)" *ngFor='let device of unpairedDevices'>
+    {{ device.name || 'Unnamed' }}
+</button>
+
+   </ion-col>
+   <ion-col>
+     <ion-item *ngFor="let device of unpairedDevices">
+       <p> {{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>
+     </ion-item>
+   </ion-col>
+ </ion-row>
+
+ </ion-grid>
  <ion-spinner name="crescent" *ngIf="gettingDevices"></ion-spinner>
-</ion-list>
+</ion-content>
+
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-buttons end>
-      <button ion-button (click)="startScanning()">
-        Refresh
-      </button>
-      <button ion-button (click)="disconnect()">
-        Disconnect
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
+ <ion-toolbar>
+   <ion-buttons end>
+     <button ion-button (click)="startScanning()">
+       Refresh
+     </button>
+   </ion-buttons>
+ </ion-toolbar>
 </ion-footer>

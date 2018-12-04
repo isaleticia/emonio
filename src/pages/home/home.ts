@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+//import { NavController } from 'ionic-angular';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { AlertController } from 'ionic-angular';
 
@@ -12,9 +12,15 @@ export class HomePage {
   unpairedDevices: any;
   pairedDevices: any;
   gettingDevices: Boolean;
+
   constructor(private bluetoothSerial: BluetoothSerial, private alertCtrl: AlertController) {
     bluetoothSerial.enable();
   }
+
+  ionViewDidEnter() {
+  console.log('ionViewDidEnter');
+  this.startScanning();
+}
 
 
 
