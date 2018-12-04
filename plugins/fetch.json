@@ -18,7 +18,7 @@
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-device@2.0.2"
+      "id": "cordova-plugin-device@^2.0.2"
     },
     "is_top_level": true,
     "variables": {}
@@ -47,20 +47,12 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-ble-central": {
+  "cordova-plugin-bluetooth-serial": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-ble-central"
+      "id": "cordova-plugin-bluetooth-serial"
     },
     "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-compat": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-compat@^1.2.0"
-    },
-    "is_top_level": false,
     "variables": {}
   }
 }

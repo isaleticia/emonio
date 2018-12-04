@@ -40,8 +40,8 @@ webpackEmptyAsyncContext.id = 150;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_bluetooth_serial__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -55,36 +55,83 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, ble, ngZone) {
-        this.navCtrl = navCtrl;
-        this.ble = ble;
-        this.ngZone = ngZone;
-        this.devices = [];
+    function HomePage(bluetoothSerial, alertCtrl) {
+        this.bluetoothSerial = bluetoothSerial;
+        this.alertCtrl = alertCtrl;
+        this.success = function (data) { return alert(data); };
+        this.fail = function (error) { return alert(error); };
+        bluetoothSerial.enable();
     }
-    HomePage.prototype.ionViewDidEnter = function () {
-        console.log('ionViewDidEnter');
-        this.scan();
-    };
-    HomePage.prototype.scan = function () {
+    HomePage.prototype.startScanning = function () {
         var _this = this;
-        this.devices = [];
-        this.ble.scan([], 5).subscribe(function (device) { return _this.onDeviceDiscovered(device); });
-        setTimeout(5000);
-    };
-    HomePage.prototype.onDeviceDiscovered = function (device) {
-        var _this = this;
-        console.log('Discovered ' + JSON.stringify(device, null, 2));
-        this.ngZone.run(function () {
-            _this.devices.push(device);
+        this.pairedDevices = null;
+        this.unpairedDevices = null;
+        this.gettingDevices = true;
+        this.bluetoothSerial.discoverUnpaired().then(function (success) {
+            _this.unpairedDevices = success;
+            _this.gettingDevices = false;
+            success.forEach(function (element) {
+                // alert(element.name);
+            });
+        }, function (err) {
+            console.log(err);
         });
+        this.bluetoothSerial.list().then(function (success) {
+            _this.pairedDevices = success;
+        }, function (err) {
+        });
+    };
+    HomePage.prototype.selectDevice = function (address) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Connect',
+            message: 'Wollen Sie sich mit diesem Gerät verbinden?',
+            buttons: [
+                {
+                    text: 'No',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        _this.bluetoothSerial.connect(address).subscribe(_this.success, _this.fail);
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    HomePage.prototype.disconnect = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Disconnect',
+            message: 'Wollen Sie die Verbindung aufgeben?',
+            buttons: [
+                {
+                    text: 'No',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        _this.bluetoothSerial.disconnect();
+                    }
+                }
+            ]
+        });
+        alert.present();
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/anjanadine/emonio/src/pages/home/home.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n      List of available devices\n      </ion-title>\n      <ion-buttons end>\n      <button ion-button icon-end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content>\n  <ion-grid>\n  <ion-row style=\'background-color:#305680; color: white\'>\n    <ion-col>\n      <strong>Devices</strong>\n    </ion-col>\n    <ion-col>\n      <strong>RSSI</strong>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col> <button ion-item *ngFor="let device of devices">\n        {{ device.name || \'Unnamed\' }}\n        </button>\n    </ion-col>\n    <ion-col>\n      <button ion-item *ngFor="let device of devices">\n        <p>{{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>\n      </button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-buttons end>\n      <button ion-button (click)="scan()">\n        Refresh\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/alison/bluetoothDemo/src/pages/home/home.html"*/'<ion-list padding>\n\n <ion-list-header>\n   Paired\n </ion-list-header>\n <ion-item *ngFor="let device of pairedDevices">\n   {{device.name}}\n </ion-item>\n \n <ion-list-header>\n   Andere\n </ion-list-header>\n <ion-item *ngFor=\'let device of unpairedDevices\'>\n   <span (click)="selectDevice(device.address)">\n     {{device.name}}\n   </span>\n </ion-item>\n <ion-spinner name="crescent" *ngIf="gettingDevices"></ion-spinner>\n</ion-list>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-buttons end>\n      <button ion-button (click)="startScanning()">\n        Refresh\n      </button>\n      <button ion-button (click)="disconnect()">\n        Disconnect\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/alison/bluetoothDemo/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -117,7 +164,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_ble__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_bluetooth_serial__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(194);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -145,11 +192,11 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */]
@@ -157,8 +204,8 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_5__ionic_native_ble__["a" /* BLE */]
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -204,7 +251,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/anjanadine/emonio/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/alison/bluetoothDemo/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/alison/bluetoothDemo/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

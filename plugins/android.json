@@ -26,7 +26,7 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-plugin-ble-central": {
+    "cordova-plugin-bluetooth-serial": {
       "PACKAGE_NAME": "io.ionic.starter"
     }
   },
