@@ -61,7 +61,7 @@ $ ionic cordova run android --device
 - iOS 9
 - A free [Apple ID](https://appleid.apple.com/#!&page=signin) or paid Apple Developer account
 
-Now run the **Emonio P3-App** on a connected android device:**
+Now run the **Emonio P3-App** on a connected iOS device:**
 
 ```
 $ ionic cordova run ios --device
