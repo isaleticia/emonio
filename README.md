@@ -24,7 +24,7 @@ It uses the [cordova-bluetooth-serial-plugin](https://github.com/don/BluetoothSe
 
 1. First make sure you have the latest version of [Node.js](https://nodejs.org/en/) installed.
 
-2. Install ionic and Cordova with the following command:
+2. Install Ionic and Cordova with the following command:
 
 ```
 $ npm install -g cordova ionic
