@@ -52,7 +52,6 @@ Now run the **Emonio P3-App** on a connected android device:
 ```
 $ ionic cordova run android --device 
 ```
-- Updated Android SDK tools, platform and component dependencies. Available through Android Studio’s [SDK Manager](https://developer.android.com/studio/intro/update)
 
 ### For iOS:
 
