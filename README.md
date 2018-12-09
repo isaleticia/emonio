@@ -62,12 +62,14 @@ $ ionic cordova run android --device
 - A free [Apple ID](https://appleid.apple.com/#!&page=signin) or paid Apple Developer account
 
 
+- **Note** that you have replaced the default bundle identifier "io.ionic.starter" in this project with your own Xcode bundle identifier !!!
+
 Now run the **Emonio P3-App** on a connected iOS device:
 
 ```
 $ ionic cordova run ios --device
 ```
-**Note** that you have replaced the default bundle identifier "io.ionic.starter" in this project with your own Xcode bundle identifier !!!
+
 
 
 
