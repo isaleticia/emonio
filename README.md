@@ -2,7 +2,7 @@
 
 This is a Ionic-Cordova project written for the communication via Bluetooth between Android or iOS devices and a energy measure device 
 called [Emonio P3](https://https://www.emonio.de).
-It uses the [cordova-bluetooth-serial-plugin](https://github.com/don/BluetoothSerial) to enable communication over Bluetooth.
+It uses the [cordova-bluetooth-serial-plugin](https://github.com/don/BluetoothSerial) to enable communication with Bluetooth.
 (*Android* uses **Classic Bluetooth** & *iOS* uses **Bluetooth Low Energy**.)
 
 - Scans for devices 
@@ -60,6 +60,9 @@ $ ionic cordova run android --device
 - Xcode 7 or higher 
 - iOS 9
 - A free [Apple ID](https://appleid.apple.com/#!&page=signin) or paid Apple Developer account
+
+
+- **Note** that you have replaced the default bundle identifier "io.ionic.starter" in this project with your own Xcode bundle identifier !!!
 
 Now run the **Emonio P3-App** on a connected iOS device:
 
