@@ -1,0 +1,37 @@
+<ion-header> <br>
+  <ion-navbar>
+    <ion-title>
+        {{ device.name ||  'Unnamed'}}
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-end>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row style='background-color:#305680; color: white'>
+          <ion-col>
+            <strong>Firmware </strong>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-col>
+          <button style= "font-size:13px"> <strong>ID:</strong> {{ device.id }} </button>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-footer>
+<ion-toolbar>
+  <!--<ion-buttons end>
+    <button ion-button (click)="goToHomePage()">
+      Back
+    </button>
+  </ion-buttons>-->
+</ion-toolbar>
+</ion-footer>

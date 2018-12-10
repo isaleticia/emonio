@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-//import { NavController } from 'ionic-angular';
-import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
-import { AlertController } from 'ionic-angular';
+import { DetailPage } from './../detail/detail';
+import { Component, NgZone } from '@angular/core';
+import { NavController, ToastController } from 'ionic-angular';
+import { BLE } from '@ionic-native/ble';
 
 @Component({
   selector: 'page-home',
@@ -9,91 +9,42 @@ import { AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  unpairedDevices: any;
-  pairedDevices: any;
-  gettingDevices: Boolean;
+  devices: any[] = [];
 
-  constructor(private bluetoothSerial: BluetoothSerial, private alertCtrl: AlertController) {
-    bluetoothSerial.enable();
+  constructor(public navCtrl: NavController,
+              private ble: BLE,
+              private ngZone: NgZone,
+              public ToastController: ToastController) {
   }
 
-  ionViewDidEnter() {
-  console.log('ionViewDidEnter');
-  this.startScanning();
-}
-
-
-
-  startScanning() {
-    this.pairedDevices = null;
-    this.unpairedDevices = null;
-    this.gettingDevices = true;
-    this.bluetoothSerial.discoverUnpaired().then((success) => {
-      this.unpairedDevices = success;
-      this.gettingDevices = false;
-      success.forEach(element => {
-        // alert(element.name);
-      });
-    },
-      (err) => {
-        console.log(err);
-      })
-
-    this.bluetoothSerial.list().then((success) => {
-      this.pairedDevices = success;
-    },
-      (err) => {
-
-      })
+  ionViewDidEnter() { ////scan() wird ausgeführt, wenn seite aufgerufen wird
+    console.log('ionViewDidEnter');
+    this.scan();
   }
-  success = (data) => alert(data);
-  fail = (error) => alert(error);
 
-  selectDevice(address: any) {
+  scan() { // scannt nach BLE-Geräten bis timeout erreicht ist
+    this.devices = [];
 
-    let alert = this.alertCtrl.create({
-      title: 'Connect',
-      message: 'Wollen Sie sich mit diesem Gerät verbinden?',
-      buttons: [
-        {
-          text: 'No',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Yes',
-          handler: () => {
-            this.bluetoothSerial.connect(address).subscribe(this.success, this.fail);
-          }
-        }
-      ]
+    this.ble.scan([], 5).subscribe(
+      device => this.onDeviceDiscovered(device),
+    );
+
+   setTimeout(5000);
+  }
+
+  onDeviceDiscovered(device) { //aufgerufen, wenn Gerät gefunden wurde - gibt GeräteInfos zurück
+    console.log('Discovered ' + JSON.stringify(device, null, 2));
+    this.ngZone.run(() => {
+      this.devices.push(device);
     });
-    alert.present();
-
   }
 
-  disconnect() {
-    let alert = this.alertCtrl.create({
-      title: 'Disconnect',
-      message: 'Wollen Sie die Verbindung aufgeben?',
-      buttons: [
-        {
-          text: 'No',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Yes',
-          handler: () => {
-            this.bluetoothSerial.disconnect();
-          }
-        }
-      ]
+  deviceSelected(device){
+    console.log(JSON.stringify(device) + ' selected ');
+    this.navCtrl.push(DetailPage, {
+      device: device
     });
-    alert.present();
   }
+
+
 }

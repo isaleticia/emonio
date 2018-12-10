@@ -38,9 +38,18 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #305680,
 );
 
+ion-row {
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  padding: 10px;
+}
+p{
+  text-align: right;
+}
 
 // App iOS Variables
 // --------------------------------------------------
