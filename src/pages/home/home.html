@@ -1,46 +1,88 @@
-<ion-header> <br>
+<ion-header>
   <ion-navbar>
-    <ion-title>
-      List of available devices
-      </ion-title>
-      <ion-buttons end>
-      <button ion-button icon-end>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-buttons>
+  <ion-title>Verfügbare Geräte</ion-title>
+  <ion-buttons end>
+    <button ion-button class="refresh-button" (click)="scan()">
+      <ion-icon name="ios-refresh"></ion-icon>
+    </button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content>
   <ion-grid>
-  <ion-row style='background-color:#305680; color: white'>
-    <ion-col>
-      <strong>Devices</strong>
+  <ion-row style='background-color:#305680;'>
+    <ion-col col-4>
+      <strong>Gerätename</strong>
     </ion-col>
-    <ion-col>
-      <strong>RSSI</strong>
+    <ion-col col-4>
+      <strong>Signalstärke</strong>
+    </ion-col>
+    <ion-col col-4>
+      <strong>Status</strong>
     </ion-col>
   </ion-row>
 
   <ion-row>
-    <ion-col> <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
-           {{ device.name || 'Unnamed' }} </button>
+    <ion-col col-5> <button ion-item detail-none *ngFor="let device of devices" (click)="deviceSelected(device)">
+           {{ device.name || 'Unbenannt' }} </button>
    </ion-col>
-    <ion-col>
-      <button ion-item *ngFor="let device of devices">
-        <p>{{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>
+
+    <ion-col col-3>
+      <button ion-item detail-none *ngFor="let device of devices">
+        <p>{{ device.rssi }} </p>
+      </button>
+    </ion-col>
+    <ion-col col-3>
+      <button ion-item detail-none *ngFor="let device of devices">
+        <p>test</p>
       </button>
     </ion-col>
   </ion-row>
   </ion-grid>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons end>
-      <button ion-button (click)="scan()">
-        Refresh
+<ion-footer >
+  <ion-toolbar class="home-footer">
+    <ion-row style='background-color:#305680; color: white'>
+      <ion-col>
+    <ion-buttons>
+      <button ion-button icon-only >
+        <ion-icon name="md-information-circle"></ion-icon>
       </button>
     </ion-buttons>
+      </ion-col>
+<!--
+<ion-col>
+<ion-buttons>
+    <button ion-button icon-only >
+      <ion-icon name=thingsboard-logo></ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-col>
+  -->
+      <ion-col>
+        <ion-buttons>
+          <button ion-button icon-only >
+            <ion-icon name="md-at"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col>
+        <ion-buttons>
+      <button ion-button icon-only >
+        <ion-icon name="md-settings"></ion-icon>
+      </button>
+    </ion-buttons>
+      </ion-col>
+      <ion-col>
+    <ion-buttons>
+      <button ion-button icon-only >
+        <ion-icon name="md-download"></ion-icon>
+      </button>
+    </ion-buttons>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-footer>
