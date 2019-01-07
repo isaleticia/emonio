@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 271:
+/***/ 460:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailPageModule", function() { return DetailPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeviceInfoPageModule", function() { return DeviceInfoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detail__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__deviceInfo__ = __webpack_require__(340);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetailPageModule = /** @class */ (function () {
-    function DetailPageModule() {
+var DeviceInfoPageModule = /** @class */ (function () {
+    function DeviceInfoPageModule() {
     }
-    DetailPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+    DeviceInfoPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__detail__["a" /* DetailPage */],
+                __WEBPACK_IMPORTED_MODULE_2__deviceInfo__["a" /* DeviceInfoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detail__["a" /* DetailPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__deviceInfo__["a" /* DeviceInfoPage */]),
             ],
         })
-    ], DetailPageModule);
-    return DetailPageModule;
+    ], DeviceInfoPageModule);
+    return DeviceInfoPageModule;
 }());
 
-//# sourceMappingURL=detail.module.js.map
+//# sourceMappingURL=deviceInfo.module.js.map
 
 /***/ })
 

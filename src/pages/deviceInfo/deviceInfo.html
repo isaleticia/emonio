@@ -1,0 +1,29 @@
+<ion-header>
+ <ion-navbar>
+   <ion-title>
+   </ion-title>
+ </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-style">
+ <ion-grid>
+     <ion-row style='background-color:#305680; color: white;'>
+       <ion-col>
+         <strong>Device Information </strong>
+       </ion-col>
+       </ion-row>
+       <ion-row>
+       </ion-row>
+       <p><strong>System ID</strong> {{sysid}}</p>
+           <p><strong>Model Number</strong> {{modelnr}}</p>
+               <p><strong>Serial Number</strong> {{serialnr}}</p>
+                   <p><strong>Firmware Revision</strong> {{firmware}}</p>
+                       <p><strong>Hardware Revision </strong>{{hardwarerevision}}</p>
+                           <p><strong>Software Revision</strong> {{softwarerevision}}</p>
+                           <p><strong>Manufacture Name </strong>{{manu}}</p>
+                           <p>{{cert}} <strong>IEEE</strong> Regulatory Certification Data List</p>
+                           <p><strong>PnP ID</strong> {{pnpid}}</p>
+
+
+ </ion-grid>
+</ion-content>

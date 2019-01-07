@@ -17,7 +17,7 @@
        under the License.
  */
 
-package io.ionic.emoniop3;
+package io.ionic.emoniop3.v1;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

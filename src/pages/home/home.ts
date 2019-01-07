@@ -27,6 +27,7 @@ export class HomePage {
 
     this.ble.scan([], 5).subscribe(
       device => this.onDeviceDiscovered(device),
+      error => alert("scan error")
     );
 
    setTimeout(5000);
