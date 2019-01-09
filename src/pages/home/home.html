@@ -1,9 +1,19 @@
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <title>Emonio-Homepage</title>
+
+</head>
+<body>
 <ion-header>
+  <br>
   <ion-navbar>
   <ion-title>Verfügbare Geräte</ion-title>
   <ion-buttons end>
     <button ion-button class="refresh-button" (click)="scan()">
-      <ion-icon name="ios-refresh"></ion-icon>
+      <ion-icon name="md-refresh"></ion-icon>
     </button>
   </ion-buttons>
   </ion-navbar>
@@ -12,7 +22,7 @@
 
 <ion-content>
   <ion-grid>
-  <ion-row style='background-color:#305680;'>
+  <ion-row style='background-color:#305680; font-size: medium;'>
     <ion-col col-4>
       <strong>Gerätename</strong>
     </ion-col>
@@ -86,3 +96,5 @@
     </ion-row>
   </ion-toolbar>
 </ion-footer>
+</body>
+</html>

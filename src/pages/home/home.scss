@@ -1,13 +1,16 @@
 page-home {
 
-  .home-header {padding-top: 8px;
-  }
+
 
 
   ion-icon{
     color: white;
   }
   .refresh-button{ color:#305680 !important; font-size: 30px;
+  }
+
+  ion-navbar{
+  padding:5px;
   }
 }
 ion-icon {
