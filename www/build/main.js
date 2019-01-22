@@ -5,7 +5,7 @@ webpackJsonp([1],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detail_detail__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__detail_detail__ = __webpack_require__(340);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_ble__ = __webpack_require__(110);
@@ -55,7 +55,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/anjanadine/emonio/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n  <ion-title>Verfügbare Geräte</ion-title>\n  <ion-buttons end>\n    <button ion-button class="refresh-button" (click)="scan()">\n      <ion-icon name="ios-refresh"></ion-icon>\n    </button>\n  </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-grid>\n  <ion-row style=\'background-color:#305680;\'>\n    <ion-col col-4>\n      <strong>Gerätename</strong>\n    </ion-col>\n    <ion-col col-4>\n      <strong>Signalstärke</strong>\n    </ion-col>\n    <ion-col col-4>\n      <strong>Status</strong>\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col col-5> <button ion-item detail-none *ngFor="let device of devices" (click)="deviceSelected(device)">\n           {{ device.name || \'Unbenannt\' }} </button>\n   </ion-col>\n\n    <ion-col col-3>\n      <button ion-item detail-none *ngFor="let device of devices">\n        <p>{{ device.rssi }} </p>\n      </button>\n    </ion-col>\n    <ion-col col-3>\n      <button ion-item detail-none *ngFor="let device of devices">\n        <p>test</p>\n      </button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n\n<ion-footer >\n  <ion-toolbar class="home-footer">\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n    <ion-buttons>\n      <button ion-button icon-only >\n        <ion-icon name="md-information-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n      </ion-col>\n<!--\n<ion-col>\n<ion-buttons>\n    <button ion-button icon-only >\n      <ion-icon name=thingsboard-logo></ion-icon>\n    </button>\n  </ion-buttons>\n  </ion-col>\n  -->\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-at"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n      <button ion-button icon-only >\n        <ion-icon name="md-settings"></ion-icon>\n      </button>\n    </ion-buttons>\n      </ion-col>\n      <ion-col>\n    <ion-buttons>\n      <button ion-button icon-only >\n        <ion-icon name="md-download"></ion-icon>\n      </button>\n    </ion-buttons>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/lauri/Desktop/Emonio/emonio/src/pages/home/home.html"*/'<html ng-app="myApp">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">\n\n  <title>Emonio-Homepage</title>\n\n</head>\n<body>\n<ion-header>\n  <ion-navbar>\n  <ion-title> List of Available Devices</ion-title>\n  <ion-buttons end>\n    <button ion-button class="refresh-button" (click)="scan()">\n      <ion-icon name="ios-refresh"></ion-icon>\n    </button>\n  </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-grid>\n  <ion-row style=\'background-color:#305680;\'>\n    <ion-col col-4>\n      <strong>Device</strong>\n    </ion-col>\n    <ion-col col-4>\n      <strong>RSSI</strong>\n    </ion-col>\n    <ion-col col-4>\n      <strong>Status</strong>\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col col-5> <button ion-item detail-none *ngFor="let device of devices" (click)="deviceSelected(device)">\n           {{ device.name || \'Unbenannt\' }} </button>\n   </ion-col>\n\n    <ion-col col-3>\n      <button ion-item detail-none *ngFor="let device of devices">\n        <p>{{ device.rssi }} </p>\n      </button>\n    </ion-col>\n    <ion-col col-3>\n      <button ion-item detail-none *ngFor="let device of devices">\n        <p>test</p>\n      </button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n\n<ion-footer >\n  <ion-toolbar class="home-footer">\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n    <ion-buttons>\n      <button ion-button icon-only >\n        <ion-icon name="md-information-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n      </ion-col>\n\n\n<ion-col>\n<ion-buttons>\n    <button ion-button icon-only >\n      <ion-icon name="neuneu"></ion-icon>\n    </button>\n  </ion-buttons>\n  </ion-col>\n      <ion-col>\n        <ion-buttons>\n      <button ion-button icon-only >\n        <ion-icon name="md-settings"></ion-icon>\n      </button>\n    </ion-buttons>\n      </ion-col>\n      <ion-col>\n    <ion-buttons>\n      <button ion-button icon-only >\n        <ion-icon name="md-download"></ion-icon>\n      </button>\n    </ion-buttons>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n\n\n<!--\ntest code fuer detail.html\n\n<ion-footer >\n  <ion-toolbar class="emonio-footer">\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-information-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-settings"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-document"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-folder"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-download"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n        -->\n</body>\n</html>'/*ion-inline-end:"/Users/lauri/Desktop/Emonio/emonio/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_ble__["a" /* BLE */],
@@ -69,7 +69,55 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 121:
+/***/ 112:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceInfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DeviceInfoPage = /** @class */ (function () {
+    function DeviceInfoPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.manu = this.navParams.data.manu;
+        this.sysid = this.navParams.data.sysid;
+        this.pnpid = this.navParams.data.pnpid;
+        this.cert = this.navParams.data.cert;
+        this.softwarerevision = this.navParams.data.softwarerevision;
+        this.firmware = this.navParams.data.firmware;
+        this.hardwarerevision = this.navParams.data.hardwarerevision;
+        this.serialnr = this.navParams.data.serialnr;
+        this.modelnr = this.navParams.data.modelnr;
+    }
+    DeviceInfoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DeviceInfoPage');
+    };
+    DeviceInfoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-deviceInfo',template:/*ion-inline-start:"/Users/lauri/Desktop/Emonio/emonio/src/pages/deviceInfo/deviceInfo.html"*/'<ion-header>\n <ion-navbar>\n   <ion-title>\n   </ion-title>\n </ion-navbar>\n</ion-header>\n\n<ion-content class="bg-style">\n <ion-grid>\n     <ion-row style=\'background-color:#305680; color: white;\'>\n       <ion-col>\n         <strong>Device Information </strong>\n       </ion-col>\n       </ion-row>\n       <ion-row>\n       </ion-row>\n       <p><strong>System ID</strong> {{sysid}}</p>\n           <p><strong>Model Number</strong> {{modelnr}}</p>\n               <p><strong>Serial Number</strong> {{serialnr}}</p>\n                   <p><strong>Firmware Revision</strong> {{firmware}}</p>\n                       <p><strong>Hardware Revision </strong>{{hardwarerevision}}</p>\n                           <p><strong>Software Revision</strong> {{softwarerevision}}</p>\n                           <p><strong>Manufacture Name </strong>{{manu}}</p>\n                           <p>{{cert}} <strong>IEEE</strong> Regulatory Certification Data List</p>\n                           <p><strong>PnP ID</strong> {{pnpid}}</p>\n\n\n </ion-grid>\n</ion-content>\n\n'/*ion-inline-end:"/Users/lauri/Desktop/Emonio/emonio/src/pages/deviceInfo/deviceInfo.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], DeviceInfoPage);
+    return DeviceInfoPage;
+}());
+
+//# sourceMappingURL=deviceInfo.js.map
+
+/***/ }),
+
+/***/ 122:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -82,11 +130,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 121;
+webpackEmptyAsyncContext.id = 122;
 
 /***/ }),
 
-/***/ 162:
+/***/ 163:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -106,22 +154,22 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 162;
+webpackAsyncContext.id = 163;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 339:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deviceInfo_deviceInfo__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deviceInfo_deviceInfo__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -417,64 +465,18 @@ var DetailPage = /** @class */ (function () {
     ], DetailPage.prototype, "lineCanvas", void 0);
     DetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: 'page-detail',template:/*ion-inline-start:"/Users/anjanadine/emonio/src/pages/detail/detail.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n      {{ device.name || \'Unnamed\'}}\n    </ion-title>\n    <ion-buttons end>\n        <button ion-button (click)="goToDeviceInfoPage()" icon-end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n        <strong>Firmware </strong>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-3 style="background:#305680">\n\n      </ion-col>\n      <ion-col col-3 style="background:#305680">\n        Phase A\n      </ion-col>\n      <ion-col col-3 style="background:#305680">\n        Phase B\n      </ion-col>\n      <ion-col col-3 style="background:#305680">\n        Phase C\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        U\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ vrms0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ vrms1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ vrms2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        I\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ irms0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ irms1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ irms2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        P\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ watt0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ watt1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ watt2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        S\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ var0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ var1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ var2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        Q\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ va0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ va1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ va0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        t\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ freq0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ freq1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ freq2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        cos\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ phi0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ phi1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ phi2 }}\n      </ion-col>\n\n    </ion-row>\n  </ion-grid>\n\n  <ion-card>\n       <ion-card-header>\n         Leistung in Watt\n       </ion-card-header>\n       <ion-card-content>\n         <canvas #lineCanvas></canvas>\n       </ion-card-content>\n     </ion-card>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/pages/detail/detail.html"*/,
+            selector: 'page-detail',template:/*ion-inline-start:"/Users/lauri/Desktop/Emonio/emonio/src/pages/detail/detail.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n      {{ device.name || \'Unnamed\'}}\n    </ion-title>\n    <ion-buttons end>\n        <button ion-button (click)="goToDeviceInfoPage()" icon-end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n        <strong>Firmware </strong>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-3 style="background:#305680">\n\n      </ion-col>\n      <ion-col col-3 style="background:#305680">\n        Phase A\n      </ion-col>\n      <ion-col col-3 style="background:#305680">\n        Phase B\n      </ion-col>\n      <ion-col col-3 style="background:#305680">\n        Phase C\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        U\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ vrms0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ vrms1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ vrms2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        I\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ irms0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ irms1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ irms2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        P\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ watt0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ watt1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ watt2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        S\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ var0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ var1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ var2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        Q\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ va0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ va1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ va0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        t\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ freq0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ freq1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ freq2 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        cos\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ phi0 }}\n      </ion-col>\n\n      <ion-col col-3 style="background:#848484">\n        {{ phi1 }}\n      </ion-col>\n      <ion-col col-3 style="background:#848484">\n        {{ phi2 }}\n      </ion-col>\n\n    </ion-row>\n  </ion-grid>\n\n  <ion-card>\n       <ion-card-header>\n         Leistung in Watt\n       </ion-card-header>\n       <ion-card-content>\n         <canvas #lineCanvas></canvas>\n       </ion-card-content>\n     </ion-card>\n\n</ion-content>\n\n<ion-footer >\n  <ion-toolbar class="emonio-footer">\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-information-circle"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-settings"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-document"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-folder"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col>\n        <ion-buttons>\n          <button ion-button icon-only >\n            <ion-icon name="md-download"></ion-icon>\n          </button>\n        </ion-buttons>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/lauri/Desktop/Emonio/emonio/src/pages/detail/detail.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_core__["NgZone"]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_core__["NgZone"]])
     ], DetailPage);
     return DetailPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=detail.js.map
-
-/***/ }),
-
-/***/ 340:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceInfoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var DeviceInfoPage = /** @class */ (function () {
-    function DeviceInfoPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.manu = this.navParams.data.manu;
-        this.sysid = this.navParams.data.sysid;
-        this.pnpid = this.navParams.data.pnpid;
-        this.cert = this.navParams.data.cert;
-        this.softwarerevision = this.navParams.data.softwarerevision;
-        this.firmware = this.navParams.data.firmware;
-        this.hardwarerevision = this.navParams.data.hardwarerevision;
-        this.serialnr = this.navParams.data.serialnr;
-        this.modelnr = this.navParams.data.modelnr;
-    }
-    DeviceInfoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DeviceInfoPage');
-    };
-    DeviceInfoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-deviceInfo',template:/*ion-inline-start:"/Users/anjanadine/emonio/src/pages/deviceInfo/deviceInfo.html"*/'<ion-header>\n <ion-navbar>\n   <ion-title>\n   </ion-title>\n </ion-navbar>\n</ion-header>\n\n<ion-content class="bg-style">\n <ion-grid>\n     <ion-row style=\'background-color:#305680; color: white;\'>\n       <ion-col>\n         <strong>Device Information </strong>\n       </ion-col>\n       </ion-row>\n       <ion-row>\n       </ion-row>\n       <p><strong>System ID</strong> {{sysid}}</p>\n           <p><strong>Model Number</strong> {{modelnr}}</p>\n               <p><strong>Serial Number</strong> {{serialnr}}</p>\n                   <p><strong>Firmware Revision</strong> {{firmware}}</p>\n                       <p><strong>Hardware Revision </strong>{{hardwarerevision}}</p>\n                           <p><strong>Software Revision</strong> {{softwarerevision}}</p>\n                           <p><strong>Manufacture Name </strong>{{manu}}</p>\n                           <p>{{cert}} <strong>IEEE</strong> Regulatory Certification Data List</p>\n                           <p><strong>PnP ID</strong> {{pnpid}}</p>\n\n\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/pages/deviceInfo/deviceInfo.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
-    ], DeviceInfoPage);
-    return DeviceInfoPage;
-    var _a, _b;
-}());
-
-//# sourceMappingURL=deviceInfo.js.map
 
 /***/ }),
 
@@ -500,16 +502,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_ble__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_bluetooth_serial__ = __webpack_require__(414);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_charts__ = __webpack_require__(415);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ng2_charts__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(459);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_detail_detail__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_deviceInfo_deviceInfo__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_detail_detail__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_deviceInfo_deviceInfo__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -575,254 +577,254 @@ var AppModule = /** @class */ (function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 215,
-	"./af.js": 215,
-	"./ar": 216,
-	"./ar-dz": 217,
-	"./ar-dz.js": 217,
-	"./ar-kw": 218,
-	"./ar-kw.js": 218,
-	"./ar-ly": 219,
-	"./ar-ly.js": 219,
-	"./ar-ma": 220,
-	"./ar-ma.js": 220,
-	"./ar-sa": 221,
-	"./ar-sa.js": 221,
-	"./ar-tn": 222,
-	"./ar-tn.js": 222,
-	"./ar.js": 216,
-	"./az": 223,
-	"./az.js": 223,
-	"./be": 224,
-	"./be.js": 224,
-	"./bg": 225,
-	"./bg.js": 225,
-	"./bm": 226,
-	"./bm.js": 226,
-	"./bn": 227,
-	"./bn.js": 227,
-	"./bo": 228,
-	"./bo.js": 228,
-	"./br": 229,
-	"./br.js": 229,
-	"./bs": 230,
-	"./bs.js": 230,
-	"./ca": 231,
-	"./ca.js": 231,
-	"./cs": 232,
-	"./cs.js": 232,
-	"./cv": 233,
-	"./cv.js": 233,
-	"./cy": 234,
-	"./cy.js": 234,
-	"./da": 235,
-	"./da.js": 235,
-	"./de": 236,
-	"./de-at": 237,
-	"./de-at.js": 237,
-	"./de-ch": 238,
-	"./de-ch.js": 238,
-	"./de.js": 236,
-	"./dv": 239,
-	"./dv.js": 239,
-	"./el": 240,
-	"./el.js": 240,
-	"./en-au": 241,
-	"./en-au.js": 241,
-	"./en-ca": 242,
-	"./en-ca.js": 242,
-	"./en-gb": 243,
-	"./en-gb.js": 243,
-	"./en-ie": 244,
-	"./en-ie.js": 244,
-	"./en-il": 245,
-	"./en-il.js": 245,
-	"./en-nz": 246,
-	"./en-nz.js": 246,
-	"./eo": 247,
-	"./eo.js": 247,
-	"./es": 248,
-	"./es-do": 249,
-	"./es-do.js": 249,
-	"./es-us": 250,
-	"./es-us.js": 250,
-	"./es.js": 248,
-	"./et": 251,
-	"./et.js": 251,
-	"./eu": 252,
-	"./eu.js": 252,
-	"./fa": 253,
-	"./fa.js": 253,
-	"./fi": 254,
-	"./fi.js": 254,
-	"./fo": 255,
-	"./fo.js": 255,
-	"./fr": 256,
-	"./fr-ca": 257,
-	"./fr-ca.js": 257,
-	"./fr-ch": 258,
-	"./fr-ch.js": 258,
-	"./fr.js": 256,
-	"./fy": 259,
-	"./fy.js": 259,
-	"./gd": 260,
-	"./gd.js": 260,
-	"./gl": 261,
-	"./gl.js": 261,
-	"./gom-latn": 262,
-	"./gom-latn.js": 262,
-	"./gu": 263,
-	"./gu.js": 263,
-	"./he": 264,
-	"./he.js": 264,
-	"./hi": 265,
-	"./hi.js": 265,
-	"./hr": 266,
-	"./hr.js": 266,
-	"./hu": 267,
-	"./hu.js": 267,
-	"./hy-am": 268,
-	"./hy-am.js": 268,
-	"./id": 269,
-	"./id.js": 269,
-	"./is": 270,
-	"./is.js": 270,
-	"./it": 271,
-	"./it.js": 271,
-	"./ja": 272,
-	"./ja.js": 272,
-	"./jv": 273,
-	"./jv.js": 273,
-	"./ka": 274,
-	"./ka.js": 274,
-	"./kk": 275,
-	"./kk.js": 275,
-	"./km": 276,
-	"./km.js": 276,
-	"./kn": 277,
-	"./kn.js": 277,
-	"./ko": 278,
-	"./ko.js": 278,
-	"./ku": 279,
-	"./ku.js": 279,
-	"./ky": 280,
-	"./ky.js": 280,
-	"./lb": 281,
-	"./lb.js": 281,
-	"./lo": 282,
-	"./lo.js": 282,
-	"./lt": 283,
-	"./lt.js": 283,
-	"./lv": 284,
-	"./lv.js": 284,
-	"./me": 285,
-	"./me.js": 285,
-	"./mi": 286,
-	"./mi.js": 286,
-	"./mk": 287,
-	"./mk.js": 287,
-	"./ml": 288,
-	"./ml.js": 288,
-	"./mn": 289,
-	"./mn.js": 289,
-	"./mr": 290,
-	"./mr.js": 290,
-	"./ms": 291,
-	"./ms-my": 292,
-	"./ms-my.js": 292,
-	"./ms.js": 291,
-	"./mt": 293,
-	"./mt.js": 293,
-	"./my": 294,
-	"./my.js": 294,
-	"./nb": 295,
-	"./nb.js": 295,
-	"./ne": 296,
-	"./ne.js": 296,
-	"./nl": 297,
-	"./nl-be": 298,
-	"./nl-be.js": 298,
-	"./nl.js": 297,
-	"./nn": 299,
-	"./nn.js": 299,
-	"./pa-in": 300,
-	"./pa-in.js": 300,
-	"./pl": 301,
-	"./pl.js": 301,
-	"./pt": 302,
-	"./pt-br": 303,
-	"./pt-br.js": 303,
-	"./pt.js": 302,
-	"./ro": 304,
-	"./ro.js": 304,
-	"./ru": 305,
-	"./ru.js": 305,
-	"./sd": 306,
-	"./sd.js": 306,
-	"./se": 307,
-	"./se.js": 307,
-	"./si": 308,
-	"./si.js": 308,
-	"./sk": 309,
-	"./sk.js": 309,
-	"./sl": 310,
-	"./sl.js": 310,
-	"./sq": 311,
-	"./sq.js": 311,
-	"./sr": 312,
-	"./sr-cyrl": 313,
-	"./sr-cyrl.js": 313,
-	"./sr.js": 312,
-	"./ss": 314,
-	"./ss.js": 314,
-	"./sv": 315,
-	"./sv.js": 315,
-	"./sw": 316,
-	"./sw.js": 316,
-	"./ta": 317,
-	"./ta.js": 317,
-	"./te": 318,
-	"./te.js": 318,
-	"./tet": 319,
-	"./tet.js": 319,
-	"./tg": 320,
-	"./tg.js": 320,
-	"./th": 321,
-	"./th.js": 321,
-	"./tl-ph": 322,
-	"./tl-ph.js": 322,
-	"./tlh": 323,
-	"./tlh.js": 323,
-	"./tr": 324,
-	"./tr.js": 324,
-	"./tzl": 325,
-	"./tzl.js": 325,
-	"./tzm": 326,
-	"./tzm-latn": 327,
-	"./tzm-latn.js": 327,
-	"./tzm.js": 326,
-	"./ug-cn": 328,
-	"./ug-cn.js": 328,
-	"./uk": 329,
-	"./uk.js": 329,
-	"./ur": 330,
-	"./ur.js": 330,
-	"./uz": 331,
-	"./uz-latn": 332,
-	"./uz-latn.js": 332,
-	"./uz.js": 331,
-	"./vi": 333,
-	"./vi.js": 333,
-	"./x-pseudo": 334,
-	"./x-pseudo.js": 334,
-	"./yo": 335,
-	"./yo.js": 335,
-	"./zh-cn": 336,
-	"./zh-cn.js": 336,
-	"./zh-hk": 337,
-	"./zh-hk.js": 337,
-	"./zh-tw": 338,
-	"./zh-tw.js": 338
+	"./af": 216,
+	"./af.js": 216,
+	"./ar": 217,
+	"./ar-dz": 218,
+	"./ar-dz.js": 218,
+	"./ar-kw": 219,
+	"./ar-kw.js": 219,
+	"./ar-ly": 220,
+	"./ar-ly.js": 220,
+	"./ar-ma": 221,
+	"./ar-ma.js": 221,
+	"./ar-sa": 222,
+	"./ar-sa.js": 222,
+	"./ar-tn": 223,
+	"./ar-tn.js": 223,
+	"./ar.js": 217,
+	"./az": 224,
+	"./az.js": 224,
+	"./be": 225,
+	"./be.js": 225,
+	"./bg": 226,
+	"./bg.js": 226,
+	"./bm": 227,
+	"./bm.js": 227,
+	"./bn": 228,
+	"./bn.js": 228,
+	"./bo": 229,
+	"./bo.js": 229,
+	"./br": 230,
+	"./br.js": 230,
+	"./bs": 231,
+	"./bs.js": 231,
+	"./ca": 232,
+	"./ca.js": 232,
+	"./cs": 233,
+	"./cs.js": 233,
+	"./cv": 234,
+	"./cv.js": 234,
+	"./cy": 235,
+	"./cy.js": 235,
+	"./da": 236,
+	"./da.js": 236,
+	"./de": 237,
+	"./de-at": 238,
+	"./de-at.js": 238,
+	"./de-ch": 239,
+	"./de-ch.js": 239,
+	"./de.js": 237,
+	"./dv": 240,
+	"./dv.js": 240,
+	"./el": 241,
+	"./el.js": 241,
+	"./en-au": 242,
+	"./en-au.js": 242,
+	"./en-ca": 243,
+	"./en-ca.js": 243,
+	"./en-gb": 244,
+	"./en-gb.js": 244,
+	"./en-ie": 245,
+	"./en-ie.js": 245,
+	"./en-il": 246,
+	"./en-il.js": 246,
+	"./en-nz": 247,
+	"./en-nz.js": 247,
+	"./eo": 248,
+	"./eo.js": 248,
+	"./es": 249,
+	"./es-do": 250,
+	"./es-do.js": 250,
+	"./es-us": 251,
+	"./es-us.js": 251,
+	"./es.js": 249,
+	"./et": 252,
+	"./et.js": 252,
+	"./eu": 253,
+	"./eu.js": 253,
+	"./fa": 254,
+	"./fa.js": 254,
+	"./fi": 255,
+	"./fi.js": 255,
+	"./fo": 256,
+	"./fo.js": 256,
+	"./fr": 257,
+	"./fr-ca": 258,
+	"./fr-ca.js": 258,
+	"./fr-ch": 259,
+	"./fr-ch.js": 259,
+	"./fr.js": 257,
+	"./fy": 260,
+	"./fy.js": 260,
+	"./gd": 261,
+	"./gd.js": 261,
+	"./gl": 262,
+	"./gl.js": 262,
+	"./gom-latn": 263,
+	"./gom-latn.js": 263,
+	"./gu": 264,
+	"./gu.js": 264,
+	"./he": 265,
+	"./he.js": 265,
+	"./hi": 266,
+	"./hi.js": 266,
+	"./hr": 267,
+	"./hr.js": 267,
+	"./hu": 268,
+	"./hu.js": 268,
+	"./hy-am": 269,
+	"./hy-am.js": 269,
+	"./id": 270,
+	"./id.js": 270,
+	"./is": 271,
+	"./is.js": 271,
+	"./it": 272,
+	"./it.js": 272,
+	"./ja": 273,
+	"./ja.js": 273,
+	"./jv": 274,
+	"./jv.js": 274,
+	"./ka": 275,
+	"./ka.js": 275,
+	"./kk": 276,
+	"./kk.js": 276,
+	"./km": 277,
+	"./km.js": 277,
+	"./kn": 278,
+	"./kn.js": 278,
+	"./ko": 279,
+	"./ko.js": 279,
+	"./ku": 280,
+	"./ku.js": 280,
+	"./ky": 281,
+	"./ky.js": 281,
+	"./lb": 282,
+	"./lb.js": 282,
+	"./lo": 283,
+	"./lo.js": 283,
+	"./lt": 284,
+	"./lt.js": 284,
+	"./lv": 285,
+	"./lv.js": 285,
+	"./me": 286,
+	"./me.js": 286,
+	"./mi": 287,
+	"./mi.js": 287,
+	"./mk": 288,
+	"./mk.js": 288,
+	"./ml": 289,
+	"./ml.js": 289,
+	"./mn": 290,
+	"./mn.js": 290,
+	"./mr": 291,
+	"./mr.js": 291,
+	"./ms": 292,
+	"./ms-my": 293,
+	"./ms-my.js": 293,
+	"./ms.js": 292,
+	"./mt": 294,
+	"./mt.js": 294,
+	"./my": 295,
+	"./my.js": 295,
+	"./nb": 296,
+	"./nb.js": 296,
+	"./ne": 297,
+	"./ne.js": 297,
+	"./nl": 298,
+	"./nl-be": 299,
+	"./nl-be.js": 299,
+	"./nl.js": 298,
+	"./nn": 300,
+	"./nn.js": 300,
+	"./pa-in": 301,
+	"./pa-in.js": 301,
+	"./pl": 302,
+	"./pl.js": 302,
+	"./pt": 303,
+	"./pt-br": 304,
+	"./pt-br.js": 304,
+	"./pt.js": 303,
+	"./ro": 305,
+	"./ro.js": 305,
+	"./ru": 306,
+	"./ru.js": 306,
+	"./sd": 307,
+	"./sd.js": 307,
+	"./se": 308,
+	"./se.js": 308,
+	"./si": 309,
+	"./si.js": 309,
+	"./sk": 310,
+	"./sk.js": 310,
+	"./sl": 311,
+	"./sl.js": 311,
+	"./sq": 312,
+	"./sq.js": 312,
+	"./sr": 313,
+	"./sr-cyrl": 314,
+	"./sr-cyrl.js": 314,
+	"./sr.js": 313,
+	"./ss": 315,
+	"./ss.js": 315,
+	"./sv": 316,
+	"./sv.js": 316,
+	"./sw": 317,
+	"./sw.js": 317,
+	"./ta": 318,
+	"./ta.js": 318,
+	"./te": 319,
+	"./te.js": 319,
+	"./tet": 320,
+	"./tet.js": 320,
+	"./tg": 321,
+	"./tg.js": 321,
+	"./th": 322,
+	"./th.js": 322,
+	"./tl-ph": 323,
+	"./tl-ph.js": 323,
+	"./tlh": 324,
+	"./tlh.js": 324,
+	"./tr": 325,
+	"./tr.js": 325,
+	"./tzl": 326,
+	"./tzl.js": 326,
+	"./tzm": 327,
+	"./tzm-latn": 328,
+	"./tzm-latn.js": 328,
+	"./tzm.js": 327,
+	"./ug-cn": 329,
+	"./ug-cn.js": 329,
+	"./uk": 330,
+	"./uk.js": 330,
+	"./ur": 331,
+	"./ur.js": 331,
+	"./uz": 332,
+	"./uz-latn": 333,
+	"./uz-latn.js": 333,
+	"./uz.js": 332,
+	"./vi": 334,
+	"./vi.js": 334,
+	"./x-pseudo": 335,
+	"./x-pseudo.js": 335,
+	"./yo": 336,
+	"./yo.js": 336,
+	"./zh-cn": 337,
+	"./zh-cn.js": 337,
+	"./zh-hk": 338,
+	"./zh-hk.js": 338,
+	"./zh-tw": 339,
+	"./zh-tw.js": 339
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -849,8 +851,8 @@ webpackContext.id = 440;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -877,7 +879,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/anjanadine/emonio/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/anjanadine/emonio/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/lauri/Desktop/Emonio/emonio/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/lauri/Desktop/Emonio/emonio/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

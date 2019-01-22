@@ -1,6 +1,22 @@
 // http://ionicframework.com/docs/theming/
 
+@import "../theme/icons";
 
+@mixin makeIcon($arg, $val){
+  .#{$arg}:before ,
+  .ion-ios-#{$arg}:before ,
+  .ion-ios-#{$arg}-outline:before ,
+  .ion-md-#{$arg}:before ,
+  .ion-md-#{$arg}-outline:before {
+    content: $val;
+    font-size: 26px;
+  }
+}
+  @include makeIcon(neuneu, '\e900');
+  [element-center] {
+    margin:auto;
+
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
