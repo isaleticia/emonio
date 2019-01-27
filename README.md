@@ -7,7 +7,7 @@ It uses the [cordova-bluetooth-serial-plugin](https://github.com/don/BluetoothSe
 
 - Scans for devices 
 - Connects to devices 
-- Shows device information 
+- Displays device information
 
 ##### What will come next:
 
@@ -18,7 +18,7 @@ It uses the [cordova-bluetooth-serial-plugin](https://github.com/don/BluetoothSe
 
 - Android 
 
-- iOS **(not working yet)**
+- iOS
 
 ## Getting started: 
 
