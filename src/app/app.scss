@@ -17,6 +17,18 @@
     margin:auto;
 
 }
+
+@include makeIcon(noun_CSV_1126810, '\e901');
+[element-center] {
+  margin:auto;
+
+}
+
+@include makeIcon(noun_log_1131852, '\e902');
+[element-center] {
+  margin:auto;
+
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
