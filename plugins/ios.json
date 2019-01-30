@@ -7,26 +7,26 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.ionic.emoniop3.v1"
-    },
-    "cordova-plugin-statusbar": {
+    "cordova-plugin-ble-central": {
+      "BLUETOOTH_USAGE_DESCRIPTION": " ",
       "PACKAGE_NAME": "io.ionic.emoniop3.v1"
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "io.ionic.emoniop3.v1"
     },
-    "cordova-plugin-splashscreen": {
+    "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "io.ionic.emoniop3.v1"
     },
     "cordova-plugin-ionic-webview": {
       "PACKAGE_NAME": "io.ionic.emoniop3.v1"
     },
-    "cordova-plugin-ionic-keyboard": {
+    "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "io.ionic.emoniop3.v1"
     },
-    "cordova-plugin-ble-central": {
-      "BLUETOOTH_USAGE_DESCRIPTION": " ",
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.ionic.emoniop3.v1"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.ionic.emoniop3.v1"
     }
   },

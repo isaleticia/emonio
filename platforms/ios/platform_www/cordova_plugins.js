@@ -1,11 +1,11 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "cordova-plugin-statusbar.statusbar",
-    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-    "pluginId": "cordova-plugin-statusbar",
+    "id": "cordova-plugin-ble-central.ble",
+    "file": "plugins/cordova-plugin-ble-central/www/ble.js",
+    "pluginId": "cordova-plugin-ble-central",
     "clobbers": [
-      "window.StatusBar"
+      "ble"
     ]
   },
   {
@@ -17,11 +17,11 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-splashscreen.SplashScreen",
-    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-    "pluginId": "cordova-plugin-splashscreen",
+    "id": "cordova-plugin-ionic-keyboard.keyboard",
+    "file": "plugins/cordova-plugin-ionic-keyboard/www/ios/keyboard.js",
+    "pluginId": "cordova-plugin-ionic-keyboard",
     "clobbers": [
-      "navigator.splashscreen"
+      "window.Keyboard"
     ]
   },
   {
@@ -41,33 +41,33 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-ionic-keyboard.keyboard",
-    "file": "plugins/cordova-plugin-ionic-keyboard/www/ios/keyboard.js",
-    "pluginId": "cordova-plugin-ionic-keyboard",
+    "id": "cordova-plugin-splashscreen.SplashScreen",
+    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+    "pluginId": "cordova-plugin-splashscreen",
     "clobbers": [
-      "window.Keyboard"
+      "navigator.splashscreen"
     ]
   },
   {
-    "id": "cordova-plugin-ble-central.ble",
-    "file": "plugins/cordova-plugin-ble-central/www/ble.js",
-    "pluginId": "cordova-plugin-ble-central",
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
     "clobbers": [
-      "ble"
+      "window.StatusBar"
     ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-statusbar": "2.4.2",
-  "cordova-plugin-device": "2.0.2",
-  "cordova-plugin-splashscreen": "5.0.2",
-  "cordova-plugin-ionic-webview": "2.2.5",
-  "cordova-plugin-ionic-keyboard": "2.1.3",
   "cordova-plugin-compat": "1.2.0",
-  "cordova-plugin-ble-central": "1.2.2"
+  "cordova-plugin-ble-central": "1.2.2",
+  "cordova-plugin-device": "2.0.2",
+  "cordova-plugin-ionic-keyboard": "2.1.3",
+  "cordova-plugin-ionic-webview": "2.2.5",
+  "cordova-plugin-splashscreen": "5.0.2",
+  "cordova-plugin-statusbar": "2.4.2",
+  "cordova-plugin-whitelist": "1.3.3"
 };
 // BOTTOM OF METADATA
 });
