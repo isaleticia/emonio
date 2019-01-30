@@ -3,22 +3,108 @@
   <component name="ChangeListManager">
     <list default="true" id="fbf33c9c-62b8-4c8b-8030-9e8e290c4080" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/MyApp-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/MyApp/MyApp-Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detail/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detail/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme/icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme/icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/fonts/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/fonts/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/fonts/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/build/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/build/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Bridging-Header.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Bridging-Header.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/CDVLaunchScreen.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/CDVLaunchScreen.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Classes/AppDelegate.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Classes/AppDelegate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Classes/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Classes/AppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Classes/MainViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Classes/MainViewController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Classes/MainViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Classes/MainViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Classes/MainViewController.xib" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Classes/MainViewController.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Entitlements-Debug.plist" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Entitlements-Debug.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Entitlements-Release.plist" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Entitlements-Release.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/AppIcon29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/AppIcon29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/AppIcon40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-50@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-72@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-small@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon-small@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/AppIcon.appiconset/icon@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Images.xcassets/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-568h@2x~iphone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-667h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-736h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-Landscape-736h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-Landscape@2x~ipad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-Landscape~ipad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-Portrait@2x~ipad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default-Portrait~ipad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default@2x~iphone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchImage.launchimage/Default~iphone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchStoryboard.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Images.xcassets/LaunchStoryboard.imageset/Default@2x~universal~anyany.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/MyApp-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/MyApp-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/MyApp-Prefix.pch" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/MyApp-Prefix.pch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/README" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ble-central/BLECentralPlugin/BLECentralPlugin.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ble-central/BLECentralPlugin/BLECentralPlugin.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ble-central/BLECentralPlugin/BLECommandContext.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ble-central/BLECentralPlugin/BLECommandContext.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ble-central/BLECentralPlugin/CBPeripheral+Extensions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ble-central/BLECentralPlugin/CBPeripheral+Extensions.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-device/CDVDevice.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-device/CDVDevice.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-device/CDVDevice.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-device/CDVDevice.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-keyboard/CDVIonicKeyboard.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-keyboard/CDVIonicKeyboard.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-keyboard/CDVIonicKeyboard.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-keyboard/CDVIonicKeyboard.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/CDVWKProcessPoolFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/CDVWKProcessPoolFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/CDVWKProcessPoolFactory.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/CDVWKProcessPoolFactory.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewEngine.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewEngine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewEngine.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewEngine.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewUIDelegate.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewUIDelegate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewUIDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/CDVWKWebViewUIDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServer.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServer.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerConnection.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerConnection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerConnection.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerConnection.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataRequest.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataRequest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataRequest.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataRequest.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataResponse.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataResponse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataResponse.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerDataResponse.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerErrorResponse.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerErrorResponse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerErrorResponse.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerErrorResponse.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileRequest.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileRequest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileRequest.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileRequest.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileResponse.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileResponse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileResponse.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerFileResponse.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerFunctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerFunctions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerFunctions.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerFunctions.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerHTTPStatusCodes.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerHTTPStatusCodes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerMultiPartFormRequest.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerMultiPartFormRequest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerMultiPartFormRequest.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerMultiPartFormRequest.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerPrivate.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerPrivate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerRequest.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerRequest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerRequest.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerRequest.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerResponse.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerResponse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerResponse.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerResponse.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerURLEncodedFormRequest.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerURLEncodedFormRequest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-ionic-webview/GCDWebServerURLEncodedFormRequest.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-ionic-webview/GCDWebServerURLEncodedFormRequest.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-splashscreen/CDVSplashScreen.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-splashscreen/CDVSplashScreen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-splashscreen/CDVSplashScreen.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-splashscreen/CDVSplashScreen.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-statusbar/CDVStatusBar.h" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-statusbar/CDVStatusBar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/Plugins/cordova-plugin-statusbar/CDVStatusBar.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/Plugins/cordova-plugin-statusbar/CDVStatusBar.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/ios/MyApp/main.m" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/ios/Emonio P3-App/main.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/build/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/build/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/build/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/www/build/vendor.js.map" afterDir="false" />
     </list>
@@ -31,7 +117,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -42,6 +128,11 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/platforms/ios/Emonio P3-App/config.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -69,11 +160,13 @@
         <option value="$PROJECT_DIR$/src/pages/detail/detail.html" />
         <option value="$PROJECT_DIR$/src/pages/home/home.scss" />
         <option value="$PROJECT_DIR$/src/pages/home/home.html" />
+        <option value="$PROJECT_DIR$/platforms/ios/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="225" />
+    <option name="y" value="242" />
     <option name="width" value="1440" />
     <option name="height" value="798" />
   </component>
@@ -87,40 +180,40 @@
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
-              <item name="emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="platforms" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="platforms" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ios" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Emonio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="home" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="platforms" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ios" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Emonio P3-App" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
       <pane id="AndroidView" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547038023748" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548853330244" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -162,17 +255,17 @@
       <workItem from="1548666720042" duration="824000" />
       <workItem from="1548678543942" duration="7375000" />
       <workItem from="1548773910975" duration="1370000" />
+      <workItem from="1548852442460" duration="748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32100000" />
+    <option name="totallyTimeSpent" value="32848000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="798" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="806" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924812" visible="true" weight="0.15307583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924812" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" sideWeight="0.50075185" side_tool="true" weight="0.2496318" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -194,7 +287,7 @@
       <window_info anchor="bottom" id="Logcat" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49556214" visible="true" weight="0.6997167" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49556214" visible="true" weight="0.46918768" />
       <window_info anchor="bottom" id="TypeScript" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -303,6 +396,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/ios/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -314,12 +417,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/platforms/ios/Emonio P3-App/config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
