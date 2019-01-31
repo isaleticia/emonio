@@ -1,0 +1,37 @@
+<ion-header> <br>
+  <ion-navbar>
+    <ion-title>
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="goToDeviceInfoPage()" icon-end>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row style='background-color:#305680; color: white'>
+      <ion-col>
+        <strong>CSV </strong>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-card>
+       <ion-card-header>
+         Leistung in Watt
+       </ion-card-header>
+       <ion-card-content>
+         <canvas #lineCanvas></canvas>
+       </ion-card-content>
+     </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-footer>

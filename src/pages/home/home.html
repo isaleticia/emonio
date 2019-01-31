@@ -1,6 +1,14 @@
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <title>Emonio-Homepage</title>
+
+</head>
 <ion-header>
   <ion-navbar>
-  <ion-title>Verfügbare Geräte</ion-title>
+  <ion-title class="home-header"> List of Available Devices</ion-title>
   <ion-buttons end>
     <button ion-button class="refresh-button" (click)="scan()">
       <ion-icon name="ios-refresh"></ion-icon>
@@ -14,10 +22,10 @@
   <ion-grid>
   <ion-row style='background-color:#305680;'>
     <ion-col col-4>
-      <strong>Gerätename</strong>
+      <strong>Device</strong>
     </ion-col>
     <ion-col col-4>
-      <strong>Signalstärke</strong>
+      <strong>RSSI</strong>
     </ion-col>
     <ion-col col-4>
       <strong>Status</strong>
@@ -53,26 +61,18 @@
       </button>
     </ion-buttons>
       </ion-col>
-<!--
+
 <ion-col>
 <ion-buttons>
     <button ion-button icon-only >
-      <ion-icon name=thingsboard-logo></ion-icon>
+      <ion-icon name="neuneu"></ion-icon>
     </button>
   </ion-buttons>
   </ion-col>
-  -->
-      <ion-col>
-        <ion-buttons>
-          <button ion-button icon-only >
-            <ion-icon name="md-at"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-col>
       <ion-col>
         <ion-buttons>
       <button ion-button icon-only >
-        <ion-icon name="md-settings"></ion-icon>
+        <ion-icon name="md-construct"></ion-icon>
       </button>
     </ion-buttons>
       </ion-col>
@@ -86,3 +86,11 @@
     </ion-row>
   </ion-toolbar>
 </ion-footer>
+<!--
+
+
+test code fuer detail.html
+
+
+        -->
+</html>

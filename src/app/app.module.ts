@@ -11,13 +11,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
 import { DeviceInfoPage } from '../pages/deviceInfo/deviceInfo';
+import { CsvDetailPage } from '../pages/csvDetail/csvDetail';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     DetailPage,
-    DeviceInfoPage
+    DeviceInfoPage,
+    CsvDetailPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { DeviceInfoPage } from '../pages/deviceInfo/deviceInfo';
     MyApp,
     HomePage,
     DetailPage,
-    DeviceInfoPage
+    DeviceInfoPage,
+    CsvDetailPage
   ],
   providers: [
     StatusBar,
