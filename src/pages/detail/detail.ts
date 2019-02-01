@@ -4,11 +4,13 @@ import { BLE } from '@ionic-native/ble';
 import { Component, NgZone, ViewChild } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Chart } from 'chart.js';
+import { CsvDetailPage } from '../csvDetail/csvDetail';
 
 // Bluetooth UUIDs Clemens vorgegeben
 const SERVICE_UUID = 'E1C98240-3037-419A-AEA4-BD9CC9C49A61';
 const WRITE_CHARACTERISTIC = '00000002-EBB1-4BDA-9EDF-D0F5F8A11181';
 const RECEIVE_CHARACTERISTIC = '00000003-EBB1-4BDA-9EDF-D0F5F8A11181';
+const RECEIVE_CSVDATA_CHARACTERISTIC = '00000004-EBB1-4BDA-9EDF-D0F5F8A11181';
 
 @Component({
   selector: 'page-detail',
@@ -34,10 +36,12 @@ export class DetailPage {
 
   device = [];
   login = "login admin:emonio";
-  energyGet = "energy";
+  getEnergy = "energy";
+  getCsv = "files";
   lineChart : any;
   chartData : any[];
   energyData : any;
+  csvData : any;
   vrms0 : any;
   irms0 : any;
   watt0 : any;
@@ -102,13 +106,31 @@ export class DetailPage {
    this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.login)).then(
    data => console.log ("write login commando" + this.bytesToString(data)));
 
-   this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.energyGet)).then(
+   this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.getEnergy)).then(
    data => console.log ("write energy commando" + this.bytesToString(data)));
+   this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.getCsv)).then(
+   data => console.log ("write csv download commando" + this.bytesToString(data)));
 
 
    /* reads the current value of the characteristic
       bytesToString() converts output (arraybuffer) to string
       parse the JSON String to JS Object to access specific value */
+
+      this.ble.read(device.id, SERVICE_UUID, RECEIVE_CHARACTERISTIC).then(
+          buffer => {
+            try{
+            this.csvData = new Uint8Array(buffer);
+            this.ngZone.run(() => {
+              console.log("CSV: " + this.bytesToString(this.csvData));
+
+
+            });
+          } catch(e){
+              console.log("Parse Error");
+
+          }
+          }
+        )
 
    this.ble.read(device.id, SERVICE_UUID, RECEIVE_CHARACTERISTIC).then(
        buffer => {
@@ -183,6 +205,7 @@ export class DetailPage {
          this.phi2 = this.energyData.phase[2].phi;
 
          this.createLineChart();
+         console.log(this.bytesToString(this.energyData));
 
        });
      } catch(e){
@@ -192,6 +215,7 @@ export class DetailPage {
      }
 
    )
+
 
  this.ble.read(device.id, '180A', '2A23').then(
  buffer => {
@@ -337,19 +361,19 @@ this.ble.read(device.id, '180A', '2A50').then(
 
    type: 'line',
    data: {
-       labels: ["Phase A", "Phase B", "Phase C"],
+       labels: ["Phase A", "Phase B", "Phase C" ],
        datasets: [
            {
                label: "in Watt",
                fill: false,
                lineTension: 0.1,
-               backgroundColor: "rgba(75,192,192,0.4)",
-               borderColor: "rgba(75,192,192,1)",
+               backgroundColor: "rgba(234,16,16,1)",
+               borderColor: "rgba(234,16,16,1)",
                borderCapStyle: 'butt',
                borderDash: [],
                borderDashOffset: 0.0,
                borderJoinStyle: 'miter',
-               pointBorderColor: "rgba(75,192,192,1)",
+               pointBorderColor: "rgba(234,16,16,1)",
                pointBackgroundColor: "#fff",
                pointBorderWidth: 1,
                pointHoverRadius: 5,
@@ -373,6 +397,8 @@ this.ble.read(device.id, '180A', '2A50').then(
       }
 
   ionViewDidLoad() {
+    setTimeout(() => {
+    }, 5000);
     console.log('ionViewDidLoad DetailPage');
   }
 
@@ -394,6 +420,10 @@ this.ble.read(device.id, '180A', '2A50').then(
   this.navCtrl.push(DeviceInfoPage,{manu:this.manu,sysid:this.sysid, pnpid:this.pnpid,
     cert:this.cert, softwarerevision:this.softwarerevision, firmware:this.firmware,hardwarerevision:this.hardwarerevision,
     serialnr:this.serialnr, modelnr: this.modelnr});
+}
+
+goToCsvDetailPage() {
+this.navCtrl.push(CsvDetailPage);
 }
 
 }
