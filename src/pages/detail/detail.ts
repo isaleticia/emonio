@@ -1,12 +1,16 @@
 import { DeviceInfoPage } from './../deviceInfo/deviceInfo';
 import { HomePage } from './../home/home';
-import { BLE } from '@ionic-native/ble';
+import { BLE } from '@ionic-native/ble/';
 import { Component, NgZone, ViewChild } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { CsvDetailPage } from '../csvDetail/csvDetail';
+import { LogPage } from '../log/log';
+import { SettingsPage } from '../settings/settings';
+import { InfopagePage } from '../infopage/infopage';
+import { FilesPage } from '../files/files';
 
-// Bluetooth UUIDs Clemens vorgegeben
+// Emonio Bluetooth UUIDs
 const SERVICE_UUID = 'E1C98240-3037-419A-AEA4-BD9CC9C49A61';
 const WRITE_CHARACTERISTIC = '00000002-EBB1-4BDA-9EDF-D0F5F8A11181';
 const RECEIVE_CHARACTERISTIC = '00000003-EBB1-4BDA-9EDF-D0F5F8A11181';
@@ -36,12 +40,12 @@ export class DetailPage {
 
   device = [];
   login = "login admin:emonio";
-  getEnergy = "energy";
-  getCsv = "files";
+  energyCommando = "energy";
+  download = "download" + this.device['name'] + "-01.csv";
+
   lineChart : any;
-  chartData : any[];
-  energyData : any;
-  csvData : any;
+  data : any;
+  csvFileData : any;
   vrms0 : any;
   irms0 : any;
   watt0 : any;
@@ -64,6 +68,44 @@ export class DetailPage {
   freq2 : any;
   phi2 : any;
 
+  meterWatt0 : any[] = [];
+  meterWatt1 : any[] = [];
+  meterWatt2 : any[] = [];
+
+  csvFile: any;
+  lines: any;
+  result : any;
+  headers: any;
+  currentline: any;
+  object : {};
+  csvFileObject : any;
+
+  timestamp:any;
+  localtime:any;
+  vrms_a:any;
+  irms_a:any;
+  connected_a :any;
+  watt_a : any;
+  kwh_a : any;
+  timestamp_b:any;
+  localtime_b:any;
+  vrms_b:any;
+  irms_b:any;
+  connected_b :any;
+  watt_b : any;
+  kwh_b : any;
+  timestamp_c:any;
+  localtime_c:any;
+  vrms_c:any;
+  irms_c:any;
+  connected_c :any;
+  watt_c : any;
+  kwh_c: any;
+
+  hash : {};
+  keys: any;
+  values: any;
+
   manu : any;
   sysid : any;
   pnpid : any;
@@ -84,6 +126,7 @@ export class DetailPage {
 
   let device = navParams.get('device');
 
+    // connect to selected device
     this.ble.connect(device.id).subscribe(
     device =>this.onConnected(device),
     device => this.onDisconnected(device),
@@ -92,129 +135,72 @@ export class DetailPage {
 
 }
 
-   // connection to the peripheral
+   /*while connection is successfull:
+   - writes egy commando to characteristic every 2 sec
+   - reads & stores egy values for table visualization
+   - subscribes to characteristic & stores mtr values then creates line chart
+   */
  onConnected(device) {
    console.log(`Connected to ${device.id}`)
    this.ngZone.run(() => {
    this.device = device;
  });
 
-   // writes to characteristic
-   // last parameter must be an arraybuffer - use stringToBytes() to convert strings to arraybuffers
-   // if you want to display the data convert the arraybuffer to string with bytesToString()
+   this.writeCommando(this.login);
+   this.getEnergyDataEvery2Sec();
+   this.subscribeToMsgCharacteristic();
+   this.createLineChart();
 
-   this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.login)).then(
-   data => console.log ("write login commando" + this.bytesToString(data)));
+   // write download commando read csv data - then convert csv to JSON and store values
+   this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.download)).then(
+    data => console.log ("write download commando" + this.bytesToString(data)));
 
-   this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.getEnergy)).then(
-   data => console.log ("write energy commando" + this.bytesToString(data)));
-   this.ble.write(device.id, SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(this.getCsv)).then(
-   data => console.log ("write csv download commando" + this.bytesToString(data)));
-
-
-   /* reads the current value of the characteristic
-      bytesToString() converts output (arraybuffer) to string
-      parse the JSON String to JS Object to access specific value */
-
-      this.ble.read(device.id, SERVICE_UUID, RECEIVE_CHARACTERISTIC).then(
-          buffer => {
-            try{
-            this.csvData = new Uint8Array(buffer);
-            this.ngZone.run(() => {
-              console.log("CSV: " + this.bytesToString(this.csvData));
-
-
-            });
-          } catch(e){
-              console.log("Parse Error");
-
-          }
-          }
-        )
-
-   this.ble.read(device.id, SERVICE_UUID, RECEIVE_CHARACTERISTIC).then(
-       buffer => {
-         try{
-         this.energyData = JSON.parse(this.bytesToString(new Uint8Array(buffer)));
-         this.ngZone.run(() => {
-
-           this.vrms0 = this.energyData.phase[0].vrms;
-           this.irms0 = this.energyData.phase[0].irms;
-           this.watt0 = this.energyData.phase[0].watt;
-           this.var0 = this.energyData.phase[0].var;
-           this.va0 = this.energyData.phase[0].va;
-           this.freq0 = this.energyData.phase[0].freq;
-           this.phi0 = this.energyData.phase[0].phi;
-
-           this.vrms1 = this.energyData.phase[1].vrms;
-           this.irms1 = this.energyData.phase[1].irms;
-           this.watt1 = this.energyData.phase[1].watt;
-           this.var1 = this.energyData.phase[1].var;
-           this.va1 = this.energyData.phase[1].va;
-           this.freq1 = this.energyData.phase[1].freq;
-           this.phi1 = this.energyData.phase[1].phi;
-
-           this.vrms2 = this.energyData.phase[2].vrms;
-           this.irms2 = this.energyData.phase[2].irms;
-           this.watt2 = this.energyData.phase[2].watt;
-           this.var2 = this.energyData.phase[2].var;
-           this.va2 = this.energyData.phase[2].va;
-           this.freq2 = this.energyData.phase[2].freq;
-           this.phi2 = this.energyData.phase[2].phi;
-
-          this.createLineChart();
-
-
-         });
-       } catch(e){
-           console.log("Parse Error");
-
-       }
-       }
-     )
-
-
-   // subscribe for notifications when value changes
-   this.ble.startNotification(device.id, SERVICE_UUID, RECEIVE_CHARACTERISTIC).subscribe(
+    this.ble.read(device.id, SERVICE_UUID, RECEIVE_CHARACTERISTIC).then(
      buffer => {
-       try{
-       this.energyData = JSON.parse(String.fromCharCode.apply(null, new Uint8Array(buffer)));
-       this.ngZone.run(() => {
-         this.vrms0 = this.energyData.phase[0].vrms;
-         this.irms0 = this.energyData.phase[0].irms;
-         this.watt0 = this.energyData.phase[0].watt;
-         this.var0 = this.energyData.phase[0].var;
-         this.va0 = this.energyData.phase[0].va;
-         this.freq0 = this.energyData.phase[0].freq;
-         this.phi0 = this.energyData.phase[0].phi;
+     var data = new Uint8Array(buffer);
+     console.log("status csv file (OK or ERROR): " + this.bytesToString(data));
+     this.ngZone.run(() => {
+       console.log(this.csvFile = this.bytesToString(data));
+     });
+   }
+  )
 
-         this.vrms1 = this.energyData.phase[1].vrms;
-         this.irms1 = this.energyData.phase[1].irms;
-         this.watt1 = this.energyData.phase[1].watt;
-         this.var1 = this.energyData.phase[1].var;
-         this.va1 = this.energyData.phase[1].va;
-         this.freq1 = this.energyData.phase[1].freq;
-         this.phi1 = this.energyData.phase[1].phi;
+  this.ble.read(device.id, SERVICE_UUID, RECEIVE_CSVDATA_CHARACTERISTIC).then(
+  buffer => {
+  this.csvFile = new Uint8Array(buffer);
+   console.log("current CSV File: " + this.bytesToString(this.csvFile));
+   this.ngZone.run(() => {
+     console.log(this.csvFile = this.bytesToString(this.csvFile));
 
-         this.vrms2 = this.energyData.phase[2].vrms;
-         this.irms2 = this.energyData.phase[2].irms;
-         this.watt2 = this.energyData.phase[2].watt;
-         this.var2 = this.energyData.phase[2].var;
-         this.va2 = this.energyData.phase[2].va;
-         this.freq2 = this.energyData.phase[2].freq;
-         this.phi2 = this.energyData.phase[2].phi;
+     this.csvFileObject = JSON.parse(this.csvJSON(this.csvFile));
 
-         this.createLineChart();
-         console.log(this.bytesToString(this.energyData));
+      this.timestamp = this.csvFileObject[0].timestamp;
+      this.localtime = this.csvFileObject[0].localtime;
+      this.connected_a = this.csvFileObject[0].connected_a;
+      this.vrms_a = this.csvFileObject[0].vrms_a;
+      this.irms_a = this.csvFileObject[0].irms_a;
+      this.watt_a = this.csvFileObject[0].watt_a;
+      this.kwh_a = this.csvFileObject[0].kwh_a;
 
-       });
-     } catch(e){
-         console.log("Parse Error");
+      this.timestamp_b = this.csvFileObject[1].timestamp;
+      this.localtime_b = this.csvFileObject[1].localtime;
+      this.connected_b = this.csvFileObject[1].connected_b;
+      this.vrms_b = this.csvFileObject[1].vrms_b;
+      this.irms_b = this.csvFileObject[1].irms_b;
+      this.watt_b = this.csvFileObject[1].watt_b;
+      this.kwh_b = this.csvFileObject[1].kwh_b;
 
-     }
-     }
+      this.timestamp_c = this.csvFileObject[2].timestamp;
+      this.localtime_c = this.csvFileObject[2].localtime;
+      this.connected_c = this.csvFileObject[2].connected_b;
+      this.vrms_c = this.csvFileObject[2].vrms_c;
+      this.irms_c = this.csvFileObject[2].irms_c;
+      this.watt_c = this.csvFileObject[2].watt_c;
+      this.kwh_c = this.csvFileObject[2].kwh_c;
 
-   )
+   });
+  }
+ )
 
 
  this.ble.read(device.id, '180A', '2A23').then(
@@ -226,10 +212,7 @@ export class DetailPage {
    });
  }
 )
-//     this.ble.read(device.id, '180A', '2A24').then(function(buffer) {        //model nr  x
-//       alert(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//     });
-//
+
 this.ble.read(device.id, '180A', '2A24').then(
  buffer => {
    var data = new Uint8Array(buffer);
@@ -240,11 +223,6 @@ this.ble.read(device.id, '180A', '2A24').then(
  }
 )
 
-//     // 2A25 serial nr    x
-//     this.ble.read(device.id, '180A', '2A25').then(function(buffer) {
-//       alert(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//     });
-//
 this.ble.read(device.id, '180A', '2A25').then(
  buffer => {
    var data = new Uint8Array(buffer);
@@ -255,11 +233,6 @@ this.ble.read(device.id, '180A', '2A25').then(
  }
 )
 
-//     //hardware revision string 2A27      x
-//     this.ble.read(device.id, '180A', '2A27').then(function(buffer) {
-//       alert(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//     });
-//
 this.ble.read(device.id, '180A', '2A27').then(
  buffer => {
    var data = new Uint8Array(buffer);
@@ -269,13 +242,6 @@ this.ble.read(device.id, '180A', '2A27').then(
    });
  }
 )
-//     //frimware 2A26     x
-//     this.ble.read(device.id, '180A', '2A26').then(function(buffer) {
-//       this.variable=(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//
-//     });
-//
-//
 
 this.ble.read(device.id, '180A', '2A26').then(
  buffer => {
@@ -287,11 +253,6 @@ this.ble.read(device.id, '180A', '2A26').then(
  }
 )
 
-//     //software revision string 2A28   x
-//     this.ble.read(device.id, '180A', '2A28').then(function(buffer) {
-//       alert(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//     });
-//
 this.ble.read(device.id, '180A', '2A28').then(
  buffer => {
    var data = new Uint8Array(buffer);
@@ -301,15 +262,7 @@ this.ble.read(device.id, '180A', '2A28').then(
    });
  }
 )
-//     // this.ble.read(device.id, '180A', '2A29').then(function(buffer) {          //manufacturer   x
-//     //   this.manu=(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//     // });
-//
-//
-// // MANUFACTURER TWO  DELETE MANUFACTURER AFTERWARDS
-//
-//
-//
+
 this.ble.read(device.id, '180A', '2A29').then(
  buffer => {
    var data = new Uint8Array(buffer);
@@ -319,14 +272,6 @@ this.ble.read(device.id, '180A', '2A29').then(
    });
  }
 )
-//
-//
-//
-//
-//     //2A2A certification data list      noo
-//     this.ble.read(device.id, '180A', '2A2A').then(function(buffer) {
-//       alert(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//     });
 
 this.ble.read(device.id, '180A', '2A2A').then(
  buffer => {
@@ -337,11 +282,7 @@ this.ble.read(device.id, '180A', '2A2A').then(
    });
  }
 )
-//
-//     //pnp id 2A50 noooo
-//     this.ble.read(device.id, '180A', '2A50').then(function(buffer) {
-//       alert(String.fromCharCode.apply(null, new Uint8Array(buffer)))
-//     });
+
 this.ble.read(device.id, '180A', '2A50').then(
  buffer => {
    var data = new Uint8Array(buffer);
@@ -352,53 +293,254 @@ this.ble.read(device.id, '180A', '2A50').then(
  }
 )
 
-
  }
 
+//writes to characteristic
+ writeCommando(commando) {
+  this.ble.write(this.device['id'], SERVICE_UUID, WRITE_CHARACTERISTIC, this.stringToBytes(commando)).then(
+  data => console.log ("write commando" + this.bytesToString(data)));
+
+}
+
+
+
+//reads data if type is egy & stores each egy data value
+readEnergyData() {
+
+  this.ble.read(this.device['id'], SERVICE_UUID, RECEIVE_CHARACTERISTIC).then(
+    buffer => {
+      try{
+      this.data = JSON.parse(this.bytesToString(new Uint8Array(buffer)));
+      if (this.data.type == "egy") {
+      this.ngZone.run(() => {
+
+        this.vrms0 = this.data.phase[0].vrms;
+        this.irms0 = this.data.phase[0].irms;
+        this.watt0 = this.data.phase[0].watt;
+        this.var0 = this.data.phase[0].var;
+        this.va0 = this.data.phase[0].va;
+        this.freq0 = this.data.phase[0].freq;
+        this.phi0 = this.data.phase[0].phi;
+
+        this.vrms1 = this.data.phase[1].vrms;
+        this.irms1 = this.data.phase[1].irms;
+        this.watt1 = this.data.phase[1].watt;
+        this.var1 = this.data.phase[1].var;
+        this.va1 = this.data.phase[1].va;
+        this.freq1 = this.data.phase[1].freq;
+        this.phi1 = this.data.phase[1].phi;
+
+        this.vrms2 = this.data.phase[2].vrms;
+        this.irms2 = this.data.phase[2].irms;
+        this.watt2 = this.data.phase[2].watt;
+        this.var2 = this.data.phase[2].var;
+        this.va2 = this.data.phase[2].va;
+        this.freq2 = this.data.phase[2].freq;
+        this.phi2 = this.data.phase[2].phi;
+        console.log("egy data read: " + JSON.stringify(this.data));
+
+
+      });
+    }
+    } catch(e){
+        console.log("Parse Error read");
+
+    }
+    }
+  )
+}
+
+//function to write egy commando to characteristic & read output - every 2 sec
+ getEnergyDataEvery2Sec () {
+   try {
+   setInterval(() => {
+   this.writeCommando(this.energyCommando);
+   this.readEnergyData();
+ }, 2000);
+  }
+    catch(e){
+        console.log(" get egy data failed");
+
+    }
+ }
+
+// subscribe for notifications when value changes
+ subscribeToMsgCharacteristic() {
+   this.ble.startNotification(this.device['id'], SERVICE_UUID, RECEIVE_CHARACTERISTIC).subscribe(
+     buffer => {
+       try{
+       this.data = JSON.parse(this.bytesToString(new Uint8Array(buffer)));
+       if (this.data.type == "egy") {
+       this.ngZone.run(() => {
+
+         this.vrms0 = this.data.phase[0].vrms;
+         this.irms0 = this.data.phase[0].irms;
+         this.watt0 = this.data.phase[0].watt;
+         this.var0 = this.data.phase[0].var;
+         this.va0 = this.data.phase[0].va;
+         this.freq0 = this.data.phase[0].freq;
+         this.phi0 = this.data.phase[0].phi;
+
+         this.vrms1 = this.data.phase[1].vrms;
+         this.irms1 = this.data.phase[1].irms;
+         this.watt1 = this.data.phase[1].watt;
+         this.var1 = this.data.phase[1].var;
+         this.va1 = this.data.phase[1].va;
+         this.freq1 = this.data.phase[1].freq;
+         this.phi1 = this.data.phase[1].phi;
+
+         this.vrms2 = this.data.phase[2].vrms;
+         this.irms2 = this.data.phase[2].irms;
+         this.watt2 = this.data.phase[2].watt;
+         this.var2 = this.data.phase[2].var;
+         this.va2 = this.data.phase[2].va;
+         this.freq2 = this.data.phase[2].freq;
+         this.phi2 = this.data.phase[2].phi;
+         console.log("egy data n: " + JSON.stringify(this.data));
+
+
+       });
+     } else if (this.data.type == "mtr") {
+
+       this.meterWatt0 = this.data.phase[0].watt;
+       this.meterWatt1 = this.data.phase[1].watt;
+       this.meterWatt2 = this.data.phase[2].watt;
+
+      this.addData(this.lineChart, new Date().toLocaleTimeString());
+
+       console.log("meter data n: " + JSON.stringify(this.data));
+    }
+     } catch(e){
+         console.log("Parse Error notify");
+
+     }
+     }
+   )
+ }
+
+
+//creates line chart with received mtr values
  createLineChart(){
 
- this.lineChart = new Chart(this.lineCanvas.nativeElement, {
+  this.lineChart = new Chart(this.lineCanvas.nativeElement, {
 
    type: 'line',
    data: {
-       labels: ["Phase A", "Phase B", "Phase C" ],
+      // labels: [new Date()],
        datasets: [
            {
-               label: "in Watt",
+               label: "Phase A",
                fill: false,
                lineTension: 0.1,
-               backgroundColor: "rgba(234,16,16,1)",
-               borderColor: "rgba(234,16,16,1)",
+               backgroundColor: "rgb(255,0,0)",
+               borderColor: "rgb(255,0,0)",
                borderCapStyle: 'butt',
                borderDash: [],
                borderDashOffset: 0.0,
                borderJoinStyle: 'miter',
-               pointBorderColor: "rgba(234,16,16,1)",
+               pointBorderColor: "rgb(255,0,0)",
                pointBackgroundColor: "#fff",
                pointBorderWidth: 1,
-               pointHoverRadius: 5,
-               pointHoverBackgroundColor: "rgba(75,192,192,1)",
-               pointHoverBorderColor: "rgba(220,220,220,1)",
-               pointHoverBorderWidth: 2,
                pointRadius: 1,
                pointHitRadius: 10,
-               data : [parseInt(this.vrms0), parseInt(this.vrms1), parseInt(this.vrms2)],
+               data : [],
+               spanGaps: true,
+               showLine: true,
+           },
+           {
+               label: "Phase B",
+               fill: false,
+               lineTension: 0.1,
+               backgroundColor: "rgba(22,93,246,1)",
+               borderColor: "rgba(22,93,246,1)",
+               borderCapStyle: 'butt',
+               borderDash: [],
+               borderDashOffset: 0.0,
+               borderJoinStyle: 'miter',
+               pointBorderColor: "rgba(22,93,246,1)",
+               pointBackgroundColor: "#fff",
+               pointBorderWidth: 1,
+               pointRadius: 1,
+               pointHitRadius: 10,
+               data : [],
                spanGaps: false,
-           }
-       ]
-   }
+               showLine: true
+           },
+          {
+               label: "Phase C",
+               fill: false,
+               lineTension: 0.1,
+               backgroundColor: "rgb(50,205,50)",
+               borderColor: "rgb(50,205,50)",
+               borderCapStyle: 'butt',
+               borderDash: [],
+               borderDashOffset: 0.0,
+               borderJoinStyle: 'miter',
+               pointBorderColor: "rgb(50,205,50)",
+               pointBackgroundColor: "#fff",
+               pointBorderWidth: [],
+               pointRadius: 1,
+               pointHitRadius: 10,
+               data : [],
+               spanGaps: false,
+               showLine: true
+               }]
+             },
+           });
+         }
 
-});
+
+// add values to all datasets & update chart
+  addData(chart, label) {
+
+    if (chart.data.labels.length < 4) {
+    chart.data.labels.push(label);
+    chart.data.datasets[0].data.push(this.meterWatt0);
+    chart.data.datasets[1].data.push(this.meterWatt1);
+    chart.data.datasets[2].data.push(this.meterWatt2);
+
+    chart.update();
+  } else if (chart.data.labels.length = 4){
+    chart.data.labels.shift();
+    chart.data.datasets[0].data.shift();
+    chart.data.datasets[1].data.shift();
+    chart.data.datasets[2].data.shift();
+
+    chart.update();
+  }
 }
 
+//convert CSV to JSON
+  csvJSON(csvFile){
+    var lines=csvFile.split("\n");
+    var result = [];
+    var headers= ["timestamp","localtime","connected_a","vrms_a","irms_a","watt_a", "kwh_a", "connected_b", "vrms_b","irms_b","watt_b", "kwh_b", "connected_c", "vrms_c","irms_c","watt_c", "kwh_c" ]
+
+    for(var i=1;i<lines.length;i++){
+
+      var obj = {};
+      var currentline=lines[i].split(";");
+
+      for(var j=0;j<headers.length;j++){
+        obj[headers[j]] = currentline[j];
+      }
+
+      result.push(obj);
+
+    }
+
+    //return result; //JavaScript object
+    console.log("HALLO JSON String : " + JSON.stringify(result));
+     return JSON.stringify(result); //JSON
+
+}
 
   onDisconnected(device) {
     console.log(`Disconnected from ${device.id}`)
-      }
+  }
 
   ionViewDidLoad() {
-    setTimeout(() => {
-    }, 5000);
+
     console.log('ionViewDidLoad DetailPage');
   }
 
@@ -416,14 +558,30 @@ this.ble.read(device.id, '180A', '2A50').then(
   }
 
   goToDeviceInfoPage() {
-  console.log(this.manu+ 'pushed in');
-  this.navCtrl.push(DeviceInfoPage,{manu:this.manu,sysid:this.sysid, pnpid:this.pnpid,
+    console.log(this.manu+ 'pushed in');
+    this.navCtrl.push(DeviceInfoPage,{manu:this.manu,sysid:this.sysid, pnpid:this.pnpid,
     cert:this.cert, softwarerevision:this.softwarerevision, firmware:this.firmware,hardwarerevision:this.hardwarerevision,
     serialnr:this.serialnr, modelnr: this.modelnr});
-}
+  }
 
-goToCsvDetailPage() {
-this.navCtrl.push(CsvDetailPage);
-}
+  goToCsvDetailPage() {
+    this.navCtrl.push(CsvDetailPage);
+  }
+
+  goToInfoPage(){
+    this.navCtrl.push(InfopagePage);
+  }
+
+  goToSettings(){
+    this.navCtrl.push(SettingsPage);
+  }
+
+  goToLogPage(){
+    this.navCtrl.push(LogPage);
+  }
+
+  goToFilesPage(){
+    this.navCtrl.push(FilesPage);
+  }
 
 }

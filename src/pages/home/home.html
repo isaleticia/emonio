@@ -1,96 +1,74 @@
-<html ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-
-  <title>Emonio-Homepage</title>
-
-</head>
-<ion-header>
-  <ion-navbar>
-  <ion-title class="home-header"> List of Available Devices</ion-title>
-  <ion-buttons end>
-    <button ion-button class="refresh-button" (click)="scan()">
-      <ion-icon name="ios-refresh"></ion-icon>
-    </button>
-  </ion-buttons>
-  </ion-navbar>
+<ion-header><br>
+ <ion-navbar>
+ <ion-title> List of Available Devices </ion-title>
+ <ion-buttons end>
+   <button ion-button (click)="scan()">
+     <ion-icon color="primary" name="ios-refresh"></ion-icon>
+   </button>
+ </ion-buttons>
+</ion-navbar>
 </ion-header>
-
-
 <ion-content>
-  <ion-grid>
-  <ion-row style='background-color:#305680;'>
+ <ion-grid>
+ <ion-row style='background-color:#305680;'>
     <ion-col col-4>
-      <strong>Device</strong>
-    </ion-col>
-    <ion-col col-4>
-      <strong>RSSI</strong>
-    </ion-col>
-    <ion-col col-4>
-      <strong>Status</strong>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col col-5> <button ion-item detail-none *ngFor="let device of devices" (click)="deviceSelected(device)">
-           {{ device.name || 'Unbenannt' }} </button>
+     <strong><h6>Device</h6></strong>
    </ion-col>
-
-    <ion-col col-3>
-      <button ion-item detail-none *ngFor="let device of devices">
-        <p>{{ device.rssi }} </p>
-      </button>
-    </ion-col>
-    <ion-col col-3>
-      <button ion-item detail-none *ngFor="let device of devices">
-        <p>test</p>
-      </button>
-    </ion-col>
-  </ion-row>
-  </ion-grid>
-</ion-content>
-
-<ion-footer >
-  <ion-toolbar class="home-footer">
-    <ion-row style='background-color:#305680; color: white'>
-      <ion-col>
-    <ion-buttons>
-      <button ion-button icon-only >
-        <ion-icon name="md-information-circle"></ion-icon>
-      </button>
-    </ion-buttons>
-      </ion-col>
-
-<ion-col>
-<ion-buttons>
-    <button ion-button icon-only >
-      <ion-icon name="neuneu"></ion-icon>
-    </button>
-  </ion-buttons>
+   <ion-col col-4 >
+     <strong><h6>RSSI</h6></strong>
+   </ion-col>
+   <ion-col col-4 >
+     <strong><h6>Status</h6></strong>
+   </ion-col>
+ </ion-row>
+ <ion-row>
+   <ion-col col-5>
+     <button ion-item detail-none *ngFor="let device of devices" (click)="deviceSelected(device)"> {{ device.name || 'Unbenannt' }} </button>
   </ion-col>
-      <ion-col>
-        <ion-buttons>
-      <button ion-button icon-only >
-        <ion-icon name="md-construct"></ion-icon>
-      </button>
-    </ion-buttons>
-      </ion-col>
-      <ion-col>
-    <ion-buttons>
-      <button ion-button icon-only >
-        <ion-icon name="md-download"></ion-icon>
-      </button>
-    </ion-buttons>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
+   <ion-col col-3>
+     <button ion-item detail-none *ngFor="let device of devices">
+       <p>{{ device.rssi }} </p>
+     </button>
+   </ion-col>
+   <ion-col col-3>
+     <button ion-item detail-none *ngFor="let device of devices">
+       <p>test</p>
+     </button>
+   </ion-col>
+ </ion-row>
+ </ion-grid>
+</ion-content>
+<ion-footer >
+ <ion-toolbar class="home-footer">
+   <ion-row style='background-color:#305680; color: white'>
+     <ion-col>
+   <ion-buttons>
+     <button ion-button icon-only (click)="goToInfoPage()">
+       <ion-icon name="md-information-circle"></ion-icon>
+     </button>
+   </ion-buttons>
+     </ion-col>
+     <ion-col>
+     <ion-buttons>
+         <button ion-button icon-only (click)="openWithInAppBrowser('https://demo.thingsboard.io/login')">
+           <ion-icon name="neuneu"></ion-icon>
+         </button>
+       </ion-buttons>
+     </ion-col>
+     <ion-col>
+       <ion-buttons>
+     <button ion-button icon-only (click)="goToSettings()">
+       <ion-icon name="md-construct"></ion-icon>
+     </button>
+   </ion-buttons>
+     </ion-col>
+     <ion-col>
+   <ion-buttons>
+     <button ion-button icon-only >
+            <ion-icon name="md-download"></ion-icon>
+     </button>
+   </ion-buttons>
+     </ion-col>
+   </ion-row>
+ </ion-toolbar>
 </ion-footer>
-<!--
-
-
-test code fuer detail.html
-
-
-        -->
-</html>

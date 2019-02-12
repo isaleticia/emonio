@@ -1,19 +1,23 @@
 page-home {
 
-  .home-header {padding-top: 8%;
-    padding-bottom: 3%;
-    font-size: 1.7rem;
-  }
-ion-content
+ toolbar-title toolbar-title-md {
+   font-size: 20rem;
+ }
 
-  .refresh-button{ color:#305680 !important; font-size: 30px;
-  }
+ ion-row{
+   height: 60px;
+   font-size: 1.7rem;
+ }
 
-ion-icon {
+ ion-icon {
 
-  color: white;
-}
-  toolbar-title toolbar-title-md {
-    font-size: 20rem;
-  }
+   color: white;
+   font-size: 3.7rem;
+   font-weight: bold;
+
+ }
+
+ h6 {
+   margin-top: 5px;
+ }
 }

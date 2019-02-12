@@ -1,30 +1,21 @@
-<ion-header> <br>
+<ion-header><br>
   <ion-navbar>
     <ion-title>
       {{ device.name || 'Unnamed'}}
     </ion-title>
-    <ion-buttons end>
-        <button ion-button (click)="goToDeviceInfoPage()" icon-end>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
   <ion-grid>
     <ion-row style='background-color:#305680; color: white'>
       <ion-col>
-        <strong>Firmware </strong>
+        <h6> Energy Measurement Data </h6>
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
   <ion-grid>
     <ion-row>
       <ion-col col-3 style="background:#305680">
-
       </ion-col>
       <ion-col col-3 style="background:#305680">
         Phase A
@@ -35,15 +26,12 @@
       <ion-col col-3 style="background:#305680">
         Phase C
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         U
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ vrms0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ vrms1 }}
       </ion-col>
@@ -53,11 +41,9 @@
       <ion-col col-3 style="background:#848484">
         I
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ irms0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ irms1 }}
       </ion-col>
@@ -67,11 +53,9 @@
       <ion-col col-3 style="background:#848484">
         P
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ watt0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ watt1 }}
       </ion-col>
@@ -81,11 +65,9 @@
       <ion-col col-3 style="background:#848484">
         S
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ var0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ var1 }}
       </ion-col>
@@ -95,26 +77,21 @@
       <ion-col col-3 style="background:#848484">
         Q
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ va0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ va1 }}
       </ion-col>
       <ion-col col-3 style="background:#848484">
         {{ va0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         t
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ freq0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ freq1 }}
       </ion-col>
@@ -124,109 +101,59 @@
       <ion-col col-3 style="background:#848484">
         cos
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ phi0 }}
       </ion-col>
-
       <ion-col col-3 style="background:#848484">
         {{ phi1 }}
       </ion-col>
       <ion-col col-3 style="background:#848484">
         {{ phi2 }}
       </ion-col>
-
+      <ion-card>
+        <ion-card-header> Power (watt) </ion-card-header>
+           <ion-card-content>
+             <canvas #lineCanvas></canvas>
+           </ion-card-content>
+      </ion-card>
     </ion-row>
   </ion-grid>
-
-  <ion-card>
-       <ion-card-header>
-         Leistung in Watt
-       </ion-card-header>
-       <ion-card-content>
-         <canvas #lineCanvas></canvas>
-       </ion-card-content>
-     </ion-card>
-
 </ion-content>
-<!-- alter footer ohne custom icons
 <ion-footer >
   <ion-toolbar class="emonio-footer">
     <ion-row style='background-color:#305680; color: white'>
       <ion-col>
         <ion-buttons>
-          <button ion-button icon-only >
+          <button ion-button icon-only (click)="goToDeviceInfoPage()">
             <ion-icon name="md-information-circle"></ion-icon>
           </button>
         </ion-buttons>
       </ion-col>
       <ion-col>
         <ion-buttons>
-          <button ion-button icon-only >
+          <button ion-button icon-only (click)="goToSettings()" >
             <ion-icon name="md-settings"></ion-icon>
           </button>
         </ion-buttons>
       </ion-col>
       <ion-col>
         <ion-buttons>
-          <button ion-button icon-only >
-            <ion-icon name="md-document"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-col>
-      <ion-col>
-        <ion-buttons>
-          <button ion-button icon-only >
-            <ion-icon name="md-folder"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-col>
-      <ion-col>
-        <ion-buttons>
-          <button ion-button icon-only >
-            <ion-icon name="md-download"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-footer>
--->
-<ion-footer >
-  <ion-toolbar class="emonio-footer">
-    <ion-row style='background-color:#305680; color: white'>
-      <ion-col>
-        <ion-buttons>
-          <button ion-button icon-only >
-            <ion-icon name="md-information-circle"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-col>
-      <ion-col>
-        <ion-buttons>
-          <button ion-button icon-only >
-            <ion-icon name="md-settings"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-col>
-      <ion-col>
-        <ion-buttons>
-          <button ion-button icon-only >
+          <button ion-button icon-only (click)="goToLogPage()">
             <ion-icon name="noun_log_1131852"></ion-icon>
           </button>
         </ion-buttons>
       </ion-col>
       <ion-col>
         <ion-buttons>
-          <button ion-button icon-only >
+          <button ion-button icon-only (click)="goToFilesPage()">
             <ion-icon name="md-folder"></ion-icon>
           </button>
         </ion-buttons>
       </ion-col>
       <ion-col>
         <ion-buttons>
-          <button ion-button>
-            <ion-icon name="noun_CSV_1126810" (click)="goToCsvDetailPage()"></ion-icon>
+          <button ion-button  (click)="goToCsvDetailPage()">
+            <ion-icon name="noun_CSV_1126810"></ion-icon>
           </button>
         </ion-buttons>
       </ion-col>

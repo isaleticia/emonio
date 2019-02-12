@@ -1,36 +1,64 @@
-<ion-header> <br>
-  <ion-navbar>
-    <ion-title>
-    </ion-title>
-    <ion-buttons end>
-        <button ion-button (click)="goToDeviceInfoPage()" icon-end>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+<ion-header>
+ <ion-navbar>
+   <ion-title>
+   </ion-title>
+ </ion-navbar>
 </ion-header>
-
 <ion-content>
   <ion-grid>
     <ion-row style='background-color:#305680; color: white'>
       <ion-col>
-        <strong>CSV </strong>
+        <h6> CSV Data</h6>
       </ion-col>
     </ion-row>
   </ion-grid>
+    <div class="row header" id="header">
+             <div class="col">Timestamp</div>
+             <div class="col">Localtime</div>
+             <div class="col">Connected</div>
+             <div class="col">vrms</div>
+             <div class="col">irms</div>
+             <div class="col">watt</div>
+             <div class="col">kwh</div>
 
+           </div>
+           <div class="row" id="row">
+             <div class="col">{{ timestamp }}</div>
+             <div class="col">{{ localtime }}</div>
+             <div class="col">{{ connected_a }}</div>
+             <div class="col">{{ vrms_a }}</div>
+             <div class="col">{{ irms_a }}</div>
+             <div class="col">{{ watt_a }}</div>
+             <div class="col">{{ kwh_a }}</div>
 
+           </div>
+           <div class="row" id="row">
+              <div class="col">{{ timestamp_b }}</div>
+              <div class="col">{{ localtime_b }}</div>
+              <div class="col">{{ connected_b }}</div>
+              <div class="col">{{ vrms_b }}</div>
+              <div class="col">{{ irms_b }}</div>
+              <div class="col">{{ watt_b }}</div>
+              <div class="col">{{ kwh_b }}</div>
+           </div>
+           <div class="row" id="row">
+              <div class="col">{{ timestamp_c }}</div>
+              <div class="col">{{ localtime_c }}</div>
+              <div class="col">{{ connected_c }}</div>
+              <div class="col">{{ vrms_c }}</div>
+              <div class="col">{{ irms_c }}</div>
+              <div class="col">{{ watt_c }}</div>
+              <div class="col">{{ kwh_c }}</div>
+           </div>
   <ion-card>
        <ion-card-header>
-         Leistung in Watt
+         Power (watt) [dummy data]
        </ion-card-header>
        <ion-card-content>
          <canvas #lineCanvas></canvas>
        </ion-card-content>
      </ion-card>
-
 </ion-content>
-
 <ion-footer>
   <ion-toolbar>
   </ion-toolbar>

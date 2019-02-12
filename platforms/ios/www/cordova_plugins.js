@@ -49,11 +49,28 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
+    ]
+  },
+  {
     "id": "cordova-plugin-ble-central.ble",
     "file": "plugins/cordova-plugin-ble-central/www/ble.js",
     "pluginId": "cordova-plugin-ble-central",
     "clobbers": [
       "ble"
+    ]
+  },
+  {
+    "id": "cordova-plugin-extended-device-information.device",
+    "file": "plugins/cordova-plugin-extended-device-information/www/extended-device-information.js",
+    "pluginId": "cordova-plugin-extended-device-information",
+    "clobbers": [
+      "cordova.plugins.extended-device-information"
     ]
   }
 ];
@@ -64,10 +81,12 @@ module.exports.metadata =
   "cordova-plugin-statusbar": "2.4.2",
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-splashscreen": "5.0.2",
-  "cordova-plugin-ionic-webview": "2.2.5",
+  "cordova-plugin-ionic-webview": "3.1.2",
   "cordova-plugin-ionic-keyboard": "2.1.3",
+  "cordova-plugin-inappbrowser": "3.0.0",
   "cordova-plugin-compat": "1.2.0",
-  "cordova-plugin-ble-central": "1.2.2"
+  "cordova-plugin-ble-central": "1.2.2",
+  "cordova-plugin-extended-device-information": "2.2.0"
 };
 // BOTTOM OF METADATA
 });

@@ -1,18 +1,33 @@
 page-detail {
 
-       .scroll-content {
-           background-color: map-get($colors, light);
-       }
-
-       ion-card-header {
-           font-weight: bold;
-       }
-       ion-card {
-
-         position: center;
-         text-align: center;
+  .scroll-content {
+    background-color: map-get($colors, light);
   }
-  ion-icon{
+  ion-row {
+    height: 60px;
+    font-size: 1.6rem;
+  }
+
+  h6 {
+    margin-top: 5px;
+  }
+
+  ion-icon {
     color: white;
+    font-size: 3.7rem;
+    font-weight: bold;
+
   }
+  ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  toolbar-title toolbar-title-md {
+    font-size: 20rem;
+  }
+
+
 }

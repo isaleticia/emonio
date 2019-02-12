@@ -41,11 +41,12 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-bluetooth-serial.bluetoothSerial",
-    "file": "plugins/cordova-plugin-bluetooth-serial/www/bluetoothSerial.js",
-    "pluginId": "cordova-plugin-bluetooth-serial",
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
     "clobbers": [
-      "window.bluetoothSerial"
+      "cordova.InAppBrowser.open",
+      "window.open"
     ]
   },
   {
@@ -55,6 +56,14 @@ module.exports = [
     "clobbers": [
       "ble"
     ]
+  },
+  {
+    "id": "cordova-plugin-extended-device-information.device",
+    "file": "plugins/cordova-plugin-extended-device-information/www/extended-device-information.js",
+    "pluginId": "cordova-plugin-extended-device-information",
+    "clobbers": [
+      "cordova.plugins.extended-device-information"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -62,12 +71,13 @@ module.exports.metadata =
 {
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-ionic-keyboard": "2.1.3",
-  "cordova-plugin-ionic-webview": "2.2.5",
+  "cordova-plugin-ionic-webview": "3.1.2",
   "cordova-plugin-splashscreen": "5.0.2",
   "cordova-plugin-statusbar": "2.4.2",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-bluetooth-serial": "0.4.7",
-  "cordova-plugin-ble-central": "1.2.2"
+  "cordova-plugin-inappbrowser": "3.0.0",
+  "cordova-plugin-ble-central": "1.2.2",
+  "cordova-plugin-extended-device-information": "2.2.0"
 };
 // BOTTOM OF METADATA
 });

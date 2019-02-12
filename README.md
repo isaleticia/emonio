@@ -5,9 +5,12 @@ called [Emonio P3](https://https://www.emonio.de).
 It uses the [cordova-bluetooth-serial-plugin](https://github.com/don/BluetoothSerial) to enable communication with Bluetooth.
 (*Android* uses **Classic Bluetooth** & *iOS* uses **Bluetooth Low Energy**.)
 
-- Scans for devices 
-- Connects to devices 
-- Displays device information
+- Scan for devices 
+- Connection to devices 
+- Show device information
+- Display energy data in table (update every 2 sec)
+- Visualization of meter data in line chart (updates new data dynamically)
+- Access to [Thingsboard](https://thingsboard.io) via App
 
 ##### What will come next:
 
@@ -38,16 +41,17 @@ $ git clone https://github.com/isaleticia/emonio.git
 
 ## Running the app:
 
-> **Important:** You need to run the app on a real device otherwise Bluetooth won’t work. 
+> **Important:** You need to run the app on real device otherwise Bluetooth won’t work. 
 
 ### For Android:
 
 #### Requirements:
-- [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
-- [Android Studio](https://developer.android.com/studio/)
+
 - Updated Android SDK tools, platform and component dependencies. Available through Android Studio’s [SDK Manager](https://developer.android.com/studio/intro/update)
 
-Now run the **Emonio P3-App** on a connected android device:
+Follow [these](https://ionicframework.com/docs/building/android) steps.
+
+Now run the **Emonio P3-App** on connected android device:
 
 ```
 $ ionic cordova run android --device 
@@ -61,10 +65,9 @@ $ ionic cordova run android --device
 - iOS 9
 - A free [Apple ID](https://appleid.apple.com/#!&page=signin) or paid Apple Developer account
 
+Follow [these](https://ionicframework.com/docs/building/ios) steps.
 
-- **Note** that you have replaced the default bundle identifier "io.ionic.starter" in this project with your own Xcode bundle identifier !!!
-
-Now run the **Emonio P3-App** on a connected iOS device:
+Now run the **Emonio P3-App** on connected iOS device:
 
 ```
 $ ionic cordova run ios --device

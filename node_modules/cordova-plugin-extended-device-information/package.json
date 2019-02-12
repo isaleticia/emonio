@@ -1,0 +1,65 @@
+{
+  "_from": "cordova-plugin-extended-device-information@2.2.0",
+  "_id": "cordova-plugin-extended-device-information@2.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-JIiAt0KjJDf3Eo15shEH3rRDrx18XW4YVtIoPPPI+aNQoHLG6UmwDP3530Uf8aZQdAvyC/NWTvbw/s+MqqJTNQ==",
+  "_location": "/cordova-plugin-extended-device-information",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-extended-device-information@2.2.0",
+    "name": "cordova-plugin-extended-device-information",
+    "escapedName": "cordova-plugin-extended-device-information",
+    "rawSpec": "2.2.0",
+    "saveSpec": null,
+    "fetchSpec": "2.2.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-extended-device-information/-/cordova-plugin-extended-device-information-2.2.0.tgz",
+  "_shasum": "6f0a96690af664935ee012b2ac9d0d00e8a6815a",
+  "_spec": "cordova-plugin-extended-device-information@2.2.0",
+  "_where": "/Users/anjanadine/Emonio-P3-App",
+  "author": {
+    "name": "Daniel Ehrhardt"
+  },
+  "bugs": {
+    "url": "https://github.com/danielehrhardt/cordova-plugin-extended-device-information/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-extended-device-information",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "deprecated": false,
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "directories": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/danielehrhardt/cordova-plugin-extended-device-information#readme",
+  "license": "MIT",
+  "name": "cordova-plugin-extended-device-information",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielehrhardt/cordova-plugin-extended-device-information.git"
+  },
+  "scripts": {
+    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint tests",
+    "test": "npm run jshint"
+  },
+  "types": "./types/index.d.ts",
+  "version": "2.2.0"
+}

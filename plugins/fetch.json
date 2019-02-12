@@ -34,7 +34,7 @@
   "cordova-plugin-ionic-webview": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-ionic-webview@^2.0.0"
+      "id": "cordova-plugin-ionic-webview@^3.0.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -55,10 +55,26 @@
     "is_top_level": false,
     "variables": {}
   },
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser@3.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
   "cordova-plugin-ble-central": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-ble-central@1.2.2"
+      "id": "cordova-plugin-ble-central"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-extended-device-information": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-extended-device-information@2.2.0"
     },
     "is_top_level": true,
     "variables": {}
